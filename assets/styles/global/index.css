@@ -249,6 +249,13 @@ svg * {
   --container-padding-x: 1rem;
   --transition-duration: 0.2s;
   --border: 0.0625rem solid var(--color-dark-15);
+  /* Scrollbar */
+  --scrollbar-width: 0.75rem;
+  --scrollbar-thumb-color: #4f4e4e;
+  --scrollbar-thumb-hover-color: #777777;
+  --scrollbar-track-color: var(--color-dark-15);
+  --scrollbar-border-radius: 0.375rem;
+  --scrollbar-thumb-border: 0.1875rem solid var(--color-dark-20);
 }
 @media (width <= 90.06125rem) {
   :root {
@@ -419,4 +426,28 @@ button[aria-label]::before {
   width: 2.75rem;
   height: 2.75rem;
   content: "";
+}
+
+/* Весь скроллбар */
+::-webkit-scrollbar {
+  width: var(--scrollbar-width);
+  height: var(--scrollbar-width);
+}
+
+/* Ползунок */
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: var(--scrollbar-border-radius);
+  border: var(--scrollbar-thumb-border);
+}
+
+/* Дорожка */
+::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+  border-radius: var(--scrollbar-border-radius);
+}
+
+/* Ползунок при наведении */
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-thumb-hover-color);
 }/*# sourceMappingURL=index.css.map */

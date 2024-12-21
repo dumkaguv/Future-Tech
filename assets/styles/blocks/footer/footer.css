@@ -95,6 +95,11 @@
   color: var(--color-dark-40);
 }
 
+@media (width <= 47.99875rem) {
+  .footer__soc1als {
+    order: -1;
+  }
+}
 .footer__soc1als-list {
   display: flex;
   -moz-column-gap: clamp(0.875rem, 0.7884615385rem + 0.3846153846dvw, 1.25rem);

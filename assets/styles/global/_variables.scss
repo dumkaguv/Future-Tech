@@ -29,4 +29,12 @@
   @include laptop {
     --container-width: #{rem(1280)};
   }
+
+  /* Scrollbar */
+  --scrollbar-width: #{rem(12)};
+  --scrollbar-thumb-color: #4f4e4e;
+  --scrollbar-thumb-hover-color: #777777;
+  --scrollbar-track-color: var(--color-dark-15);
+  --scrollbar-border-radius: #{rem(6)};
+  --scrollbar-thumb-border: #{rem(3)} solid var(--color-dark-20);
 }
