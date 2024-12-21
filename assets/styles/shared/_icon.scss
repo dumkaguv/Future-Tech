@@ -1,0 +1,19 @@
+@use "../helpers" as *;
+
+.icon {
+  display: inline-flex;
+  align-items: center;
+  column-gap: rem(10);
+
+  &::after {
+    --size: #{fluid(20, 24)};
+
+    @include square(var(--size));
+
+    content: "";
+    flex-shrink: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}

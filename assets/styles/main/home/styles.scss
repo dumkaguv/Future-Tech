@@ -1,5 +1,3 @@
-@use "../../global/normalize";
-@use "../../global/fonts";
-@use "../../global/variables";
-@use "../../global/utils";
-@use "../../global/globals";
+@use "../../global";
+
+@use "../../blocks/header/header.scss";

@@ -53,18 +53,15 @@ $mobile-s: rem(480.98);
   }
 }
 
-@mixin hover($hasActiveEffectOnMobile: true) {
-  @media (any-hover: hover) {
+@mixin hover {
+  @media (hover: hover) {
     &:hover {
       @content;
     }
   }
-
-  @if ($hasActiveEffectOnMobile) {
-    @media (any-hover) {
-      &:active {
-        @content;
-      }
+  @media (hover: none) {
+    &:active {
+      @content;
     }
   }
 }

@@ -1,12 +1,27 @@
 @use "../helpers" as *;
 
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
 body {
   font-size: fluid(14, 18);
+
+  display: flex;
+  flex-direction: column;
 
   font-family: var(--font-family-base);
   letter-spacing: -0.03em;
   color: var(--color-gray-50);
   background-color: var(--color-dark);
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+main {
+  flex-grow: 1;
 }
 
 h1,
@@ -101,4 +116,18 @@ a {
   outline: rem(2) dashed var(--color-light);
   outline-offset: rem(4);
   transition-duration: 0s !important;
+}
+
+a,
+button {
+  &[aria-label] {
+    position: relative;
+
+    &::before {
+      @include abs-center;
+      @include square(rem(44));
+
+      content: "";
+    }
+  }
 }

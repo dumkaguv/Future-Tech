@@ -1,0 +1,8 @@
+@use "../helpers" as *;
+@forward "icon";
+
+.icon--arrow-top-right-yellow {
+  &::after {
+    background-image: url("../../../icons/arrow-top-right-yellow.svg");
+  }
+}
