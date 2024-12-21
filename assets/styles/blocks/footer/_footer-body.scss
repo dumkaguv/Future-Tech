@@ -1,0 +1,78 @@
+@use "../../helpers" as *;
+
+.footer {
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: rem(80);
+    padding-block: fluid(40, 80);
+    border-bottom: var(--border);
+    color: var(--color-dark-40);
+
+    @include tablet {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: 
+        "home news blogs"
+        "podcasts resources resources";
+      column-gap: rem(40);
+      row-gap: rem(20);
+    }
+
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: 
+        "home news"
+        "blogs podcasts"
+        "resources resources";
+      gap: rem(20);
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__main-link {
+    margin-bottom: fluid(16, 36);
+    font-size: fluid(16, 20);
+    letter-spacing: fluid(-0.6, -0.48);
+    font-weight: 500;
+    color: var(--color-light);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(8, 23);
+    letter-spacing: fluid(-0.54, -0.42);
+  }
+
+  &__link {
+    column-gap: rem(8);
+    align-items: center;
+    
+  }
+
+  &-link-button {
+    padding: rem(10) rem(16);
+  }
+}
+
+.footer-menu-buttons {
+  @include tablet {
+    grid-area: resources;
+  }
+}
+
+.footer-list-buttons {
+  @include tablet {
+    flex-direction: row;
+    flex-wrap: wrap;
+    column-gap: rem(12);
+  }
+}
+
+.footer-link-button {
+  padding: fluid(8, 10) fluid(14, 16);
+}

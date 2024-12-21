@@ -3,6 +3,7 @@ export default class MobileMenu {
     root: "[data-js-header]",
     overlay: "[data-js-header-overlay]",
     burgerButton: "[data-js-header-burger-button]",
+    promoLink: "[data-js-header-promo-link]",
   };
 
   static stateClasses = {
@@ -18,7 +19,20 @@ export default class MobileMenu {
     this.burgerButtonElement = this.rootElement.querySelector(
       MobileMenu.selectors.burgerButton
     );
+    this.promoLinkElement = this.rootElement.querySelector(
+      MobileMenu.selectors.promoLink
+    );
+    this.promoLinkDesktopContent =
+      "Subscribe to our Newsletter For New & latest Blogs and Resources";
     this.bindEvents();
+  }
+
+  bindEvents() {
+    this.burgerButtonElement.addEventListener(
+      "click",
+      this.onBurgerButtonClick
+    );
+    window.addEventListener("resize", this.reducePromoLinkContent);
   }
 
   onBurgerButtonClick = () => {
@@ -31,10 +45,22 @@ export default class MobileMenu {
     );
   };
 
-  bindEvents() {
-    this.burgerButtonElement.addEventListener(
-      "click",
-      this.onBurgerButtonClick
+  reducePromoLinkContent = () => {
+    const widthInRem = this.pxToRem(window.innerWidth);
+    const textElement = this.promoLinkElement?.firstElementChild;
+
+    if (textElement && widthInRem <= 47.99) {
+      textElement.textContent =
+        "Subscribe to our Newsletter For Blogs and Resources";
+    } else {
+      textElement.textContent = this.promoLinkDesktopContent;
+    }
+  };
+
+  pxToRem(px) {
+    const rootFontSize = parseFloat(
+      getComputedStyle(document.documentElement).fontSize
     );
+    return px / rootFontSize;
   }
 }
