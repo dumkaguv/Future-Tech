@@ -138,7 +138,9 @@
     }
 
     &-type {
-      font-size: rem(14);
+      @include laptop {
+        font-size: rem(14);
+      }
     }
   }
 

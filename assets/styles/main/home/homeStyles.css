@@ -1069,8 +1069,10 @@ button[aria-label]::before {
     font-size: 1.5rem;
   }
 }
-.hero__statistics-type {
-  font-size: 0.875rem;
+@media (width <= 90.06125rem) {
+  .hero__statistics-type {
+    font-size: 0.875rem;
+  }
 }
 .hero__description {
   font-size: 1.125rem;
