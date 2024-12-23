@@ -1,12 +1,15 @@
 @use "../../helpers" as *;
 
 .footer {
+  &__upper {
+    border-bottom: var(--border);
+  }
+
   &__body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     column-gap: rem(80);
     padding-block: fluid(40, 80);
-    border-bottom: var(--border);
     color: var(--color-dark-40);
 
     @include tablet {
@@ -38,6 +41,7 @@
     font-size: fluid(16, 20);
     letter-spacing: fluid(-0.6, -0.48);
     font-weight: 500;
+    width: fit-content;
     color: var(--color-light);
   }
 

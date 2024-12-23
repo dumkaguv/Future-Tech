@@ -10,13 +10,16 @@
 
     <title>Future Tech | Home 🏠</title>
 
-    <link rel="stylesheet" href="./assets/styles/main/home/styles.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/styles/main/home/homeStyles.css"
+    />
     <link rel="icon" href="./assets/icons/favicon.png" type="image/png" />
 
     <script
-      src="./assets/scripts/home/script.js"
+      src="./assets/scripts/home/homeScript.js"
       type="module"
-      defer
+      
     ></script>
   </head>
   <!-- home - 🏠 news - 📰 blog - ✍️ podcast - 📣 resources - 🌐 contact - 💬-->
@@ -28,6 +31,7 @@
           type="button"
           aria-label="Close"
           title="Close"
+          tabindex="0"
           data-js-header-close-promo
         >
           X
@@ -101,170 +105,356 @@
         </div>
       </div>
     </header>
-    <main class="content"></main>
+
+    <main class="content">
+      <section class="hero">
+        <div class="hero__body container">
+          <div
+            class="hero__introduction full-vw-line full-vw-line--bottom full-vw-line--left"
+          >
+            <div class="hero__subtitle">
+              <p>Your Journey to Tomorrow Begins Here</p>
+            </div>
+            <div class="hero__title">
+              <h1 class="hero__title-text">
+                Explore the Frontiers of Artificial Intelligence
+              </h1>
+            </div>
+            <div class="hero__description">
+              <p>
+                Welcome to the epicenter of AI innovation. FutureTech AI
+                News is your passport to a world where machines think,
+                learn, and reshape the future. Join us on this visionary
+                expedition into the heart of AI.
+              </p>
+            </div>
+          </div>
+          <div
+            class="hero__statistics full-vw-line full-vw-line--bottom full-vw-line--left"
+            role="region"
+            aria-label="Hero Statistics"
+          >
+            <dl class="hero__statistics-list">
+              <div class="hero__statistics-item">
+                <dt class="hero__statistics-value">
+                  300<span class="sign-plus-yellow">+</span>
+                </dt>
+                <dd class="hero__statistics-type">Resources available</dd>
+              </div>
+              <div class="hero__statistics-item">
+                <dt class="hero__statistics-value">
+                  12k<span class="sign-plus-yellow">+</span>
+                </dt>
+                <dd class="hero__statistics-type">Total Downloads</dd>
+              </div>
+              <div class="hero__statistics-item">
+                <dt class="hero__statistics-value">
+                  10k<span class="sign-plus-yellow">+</span>
+                </dt>
+                <dd class="hero__statistics-type">Active Users</dd>
+              </div>
+            </dl>
+          </div>
+          <div
+            class="hero__resources full-vw-line full-vw-line--bottom full-vw-line--right"
+          >
+            <div class="hero__resources-team team">
+              <img
+                src="./assets/images/team/1.png"
+                class="team__image"
+                alt="Team member 1"
+                width="60"
+                height="60"
+                loading="lazy"
+              />
+              <img
+                src="./assets/images/team/2.png"
+                class="team__image"
+                alt="Team member 2"
+                width="60"
+                height="60"
+                loading="lazy"
+              />
+              <img
+                src="./assets/images/team/3.png"
+                class="team__image"
+                alt="Team member 3"
+                width="60"
+                height="60"
+                loading="lazy"
+              />
+              <img
+                src="./assets/images/team/4.png"
+                class="team__image"
+                alt="Team member 4"
+                width="60"
+                height="60"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="hero__resources-title">
+              <p class="h5">Explore 1000+ resources</p>
+            </div>
+            <div class="hero__resources-info">
+              <p>
+                Over 1,000 articles on emerging tech trends and
+                breakthroughs.
+              </p>
+            </div>
+            <a
+              href="./"
+              class="hero__resources-button button icon icon--arrow-top-right-yellow"
+              aria-label="Explore resources"
+              >Explore Resources</a
+            >
+          </div>
+        </div>
+        <div
+          class="hero__advantages container full-vw-line full-vw-line--bottom full-vw-line--left"
+        >
+          <ul
+            class="hero__advantages-list full-vw-line full-vw-line--bottom full-vw-line--right"
+          >
+            <li class="hero__advantages-item">
+              <img
+                src="./assets/icons/homeHero/1.svg"
+                width="50"
+                height="50"
+                alt=""
+                class="hero__advantages-icon"
+              />
+              <a class="hero__advantages-link">
+                <p class="hero__advantages-title h6">
+                  Latest News Updates
+                </p>
+                <p class="hero__advantages-type">Stay Current</p>
+                <span
+                  class="hero__advantages-arrow icon icon--arrow-top-right-black"
+                ></span>
+              </a>
+              <div class="hero__advantages-statistic">
+                <p>Over 1,000 articles published monthly</p>
+              </div>
+            </li>
+            <li class="hero__advantages-item">
+              <img
+                src="./assets/icons/homeHero/2.svg"
+                width="50"
+                height="50"
+                alt=""
+                class="hero__advantages-icon"
+              />
+              <a href="./" class="hero__advantages-link">
+                <p class="hero__advantages-title h6">
+                  Expert Contributors
+                </p>
+                <p class="hero__advantages-type">Trusted Insights</p>
+                <span
+                  class="hero__advantages-arrow icon icon--arrow-top-right-black"
+                ></span>
+              </a>
+              <div class="hero__advantages-statistic">
+                <p>50+ renowned AI experts on our team</p>
+              </div>
+            </li>
+            <li class="hero__advantages-item">
+              <img
+                src="./assets/icons/homeHero/3.svg"
+                width="50"
+                height="50"
+                alt=""
+                class="hero__advantages-icon"
+              />
+              <a href="./" class="hero__advantages-link">
+                <p class="hero__advantages-title h6">Global Readership</p>
+                <p class="hero__advantages-type">Worldwide Impact</p>
+                <span
+                  class="hero__advantages-arrow icon icon--arrow-top-right-black"
+                ></span>
+              </a>
+              <div class="hero__advantages-statistic">
+                <p>2 million monthly readers</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
     <footer class="footer">
-      <div class="footer__body container">
-        <nav class="footer__menu">
-          <a class="footer__main-link" href="./" tabindex="0">Home</a>
-          <ul class="footer__list">
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0"> Features </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0"> Blogs </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Resources
-                <span class="badge">New</span>
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Testimonials
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Contact us
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Newsletter
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <nav class="footer__menu">
-          <a class="footer__main-link" href="./" tabindex="0">News</a>
-          <ul class="footer__list">
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Trending Stories
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Featured Videos
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Technology
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0"> Health </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0"> Politics </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Environment
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <nav class="footer__menu">
-          <a class="footer__main-link" href="./" tabindex="0">Blogs</a>
-          <ul class="footer__list">
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Quantum Computing
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                AI Ethics
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Space Exploration
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Biotechnology
-                <span class="badge">New</span>
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Renewable Energy
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                Biohacking
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <nav class="footer__menu">
-          <a class="footer__main-link" href="./" tabindex="0">Podcasts</a>
-          <ul class="footer__list">
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                AI Revolution
-                <span class="badge">New</span>
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                TechTalk AI
-              </a>
-            </li>
-            <li class="footer__item">
-              <a class="footer__link" href="./" tabindex="0">
-                AI Conversations
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <nav class="footer__menu footer-menu-buttons">
-          <a class="footer__main-link" href="./" tabindex="0">Resources</a>
-          <ul class="footer__list footer-list-buttons">
-            <li class="footer__item">
-              <a
-                class="footer__link footer-link-button button icon icon--arrow-top-right-yellow"
-                href="./"
-                tabindex="0"
-              >
-                Whitepapers
-              </a>
-            </li>
-            <li class="footer__item">
-              <a
-                class="footer__link footer-link-button button icon icon--arrow-top-right-yellow"
-                href="./"
-                tabindex="0"
-              >
-                Ebooks
-              </a>
-            </li>
-            <li class="footer__item">
-              <a
-                class="footer__link footer-link-button button icon icon--arrow-top-right-yellow"
-                href="./"
-                tabindex="0"
-              >
-                Reports
-              </a>
-            </li>
-            <li class="footer__item">
-              <a
-                class="footer__link footer-link-button button icon icon--arrow-top-right-yellow"
-                href="./"
-                tabindex="0"
-              >
-                Research Papers
-              </a>
-            </li>
-          </ul>
-        </nav>
+      <div class="footer__upper">
+        <div class="footer__body container">
+          <nav class="footer__menu">
+            <a class="footer__main-link" href="./" tabindex="0">Home</a>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Features
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0"> Blogs </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Resources
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Testimonials
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Contact us
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Newsletter
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer__menu">
+            <a class="footer__main-link" href="./" tabindex="0">News</a>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Trending Stories
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Featured Videos
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Technology
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0"> Health </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Politics
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Environment
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer__menu">
+            <a class="footer__main-link" href="./" tabindex="0">Blogs</a>
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Quantum Computing
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  AI Ethics
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Space Exploration
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Biotechnology
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Renewable Energy
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  Biohacking
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer__menu">
+            <a class="footer__main-link" href="./" tabindex="0"
+              >Podcasts</a
+            >
+            <ul class="footer__list">
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  AI Revolution
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  TechTalk AI
+                </a>
+              </li>
+              <li class="footer__item">
+                <a class="footer__link" href="./" tabindex="0">
+                  AI Conversations
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <nav class="footer__menu footer-menu-buttons">
+            <a class="footer__main-link" href="./" tabindex="0"
+              >Resources</a
+            >
+            <ul class="footer__list footer-list-buttons">
+              <li class="footer__item">
+                <a
+                  class="footer__link footer-link-button button icon icon--arrow-top-right-yellow"
+                  href="./"
+                  tabindex="0"
+                >
+                  Whitepapers
+                </a>
+              </li>
+              <li class="footer__item">
+                <a
+                  class="footer__link footer-link-button button icon icon--arrow-top-right-yellow"
+                  href="./"
+                  tabindex="0"
+                >
+                  Ebooks
+                </a>
+              </li>
+              <li class="footer__item">
+                <a
+                  class="footer__link footer-link-button button icon icon--arrow-top-right-yellow"
+                  href="./"
+                  tabindex="0"
+                >
+                  Reports
+                </a>
+              </li>
+              <li class="footer__item">
+                <a
+                  class="footer__link footer-link-button button icon icon--arrow-top-right-yellow"
+                  href="./"
+                  tabindex="0"
+                >
+                  Research Papers
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
       <div class="footer__extra container">
         <nav class="footer__extra-menu">
@@ -358,7 +548,7 @@
             </li>
           </ul>
         </div>
-        <div class="soc1als__copyright">
+        <div class="footer__copyright">
           © <time datetime="2024">2024</time> FutureTech. All rights
           reserved.
         </div>

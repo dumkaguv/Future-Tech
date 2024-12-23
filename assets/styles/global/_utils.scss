@@ -21,3 +21,43 @@
     display: none !important;
   }
 }
+
+.full-vw-line {
+  position: relative;
+
+  &::before,
+  &::after {
+    position: absolute;
+    width: calc((100dvw - var(--container-width)) / 2);
+    height: rem(1);
+    background-color: var(--color-dark-15);
+  }
+
+  &--top {
+    &::before {
+      content: "";
+      bottom: 100%;
+    }
+  }
+
+  &--bottom {
+    &::after {
+      content: "";
+      top: 100%;
+    }
+  }
+
+  &--left {
+    &::before,
+    &::after {
+      right: 99%;
+    }
+  }
+
+  &--right {
+    &::before,
+    &::after {
+      left: 99%;
+    }
+  }
+}

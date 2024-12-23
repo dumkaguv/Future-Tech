@@ -119,11 +119,13 @@
 @media (hover: hover) {
   .header__menu-link.is-active:hover {
     border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 }
 @media (hover: none) {
   .header__menu-link.is-active:active {
     border-color: var(--color-accent);
+    color: var(--color-accent);
   }
 }
 @media (width <= 47.99875rem) {
