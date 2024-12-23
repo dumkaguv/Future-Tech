@@ -7,6 +7,14 @@
     grid-template-areas:
       "title resources"
       "statistics resources";
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title"
+        "statistics"
+        "resources";
+    }
   }
 
   &__introduction {
@@ -18,8 +26,32 @@
     padding-bottom: rem(100);
     padding-right: rem(50);
 
-    border-right: var(--border);
     border-bottom: var(--border);
+
+    @include tablet-above {
+      border-right: var(--border);
+    }
+
+    @include laptop {
+      padding-block: rem(100);
+      padding-right: rem(40);
+    }
+
+    @include tablet {
+      padding-block: rem(40);
+      padding-right: 0;
+
+      &::after {
+        width: 100dvw;
+        right: calc(var(--container-padding-x) * -1);
+      }
+    }
+
+    @include mobile {
+      padding-top: rem(40);
+      padding-bottom: rem(30);
+      padding-right: 0;
+    }
   }
 
   &__subtitle {
@@ -27,20 +59,38 @@
     font-weight: 500;
     font-family: var(--font-family-accent);
     color: var(--color-dark-40);
-    margin-bottom: rem(30);
+    margin-bottom: fluid(10, 30);
+
+    @include laptop {
+      font-size: rem(22);
+    }
+
+    @include mobile {
+      font-size: rem(18);
+    }
   }
 
   &__title {
-    margin-bottom: rem(20);
+    margin-bottom: fluid(14, 20);
   }
 
   &__statistics {
-    border-right: var(--border);
-    border-bottom: var(--border);
+    @include tablet-above {
+      border-right: var(--border);
+      border-bottom: var(--border);
+    }
 
     &-list {
       display: flex;
-      column-gap: rem(100);
+      column-gap: rem(50);
+
+      @include laptop {
+        column-gap: rem(40);
+      }
+
+      @include mobile {
+        column-gap: rem(20);
+      }
     }
 
     &-item {
@@ -53,6 +103,23 @@
 
       &:not(:last-child) {
         border-right: var(--border);
+        padding-right: rem(50);
+
+        @include laptop {
+          padding-right: rem(40);
+        }
+
+        @include mobile {
+          padding-right: rem(20);
+        }
+      }
+
+      @include laptop {
+        padding-block: rem(30);
+      }
+
+      @include mobile {
+        padding-block: rem(20);
       }
     }
 
@@ -60,12 +127,32 @@
       font-size: rem(40);
       font-weight: 600;
       color: var(--color-light);
+
+      @include laptop {
+        font-size: rem(30);
+      }
+
+      @include mobile {
+        font-size: rem(24);
+      }
+    }
+
+    &-type {
+      font-size: rem(14);
     }
   }
 
   &__description {
     font-size: rem(18);
     color: var(--color-gray-50);
+
+    @include laptop {
+      font-size: rem(16);
+    }
+
+    @include mobile {
+      font-size: rem(14);
+    }
   }
 
   &__statistics {
@@ -90,12 +177,51 @@
 
     border-bottom: var(--border);
 
+    @include laptop {
+      padding-left: rem(50);
+      padding-bottom: rem(50);
+    }
+
+    @include tablet {
+      background-size: auto;
+
+      &::after {
+        width: 100dvw;
+        left: calc(var(--container-padding-x) * -1);
+      }
+    }
+
+    @include mobile {
+      padding-top: rem(100);
+      padding-left: rem(24);
+      padding-bottom: rem(40);
+    }
+
+    @include mobile-s {
+      --offsetX: var(--container-padding-x);
+      margin-left: calc(var(--offsetX) * -1);
+      max-width: unset;
+      width: calc(100% + 2 * var(--offsetX));
+    }
+
+    &-button {
+      @include mobile-s {
+        width: 90%;
+      }
+    }
+
     &-team {
       margin-bottom: fluid(20, 30);
     }
 
     &-title {
+      font-size: rem(24);
+      color: var(--color-light);
       margin-bottom: fluid(6, 14);
+
+      @include laptop {
+        font-size: rem(20);
+      }
     }
 
     &-info {
@@ -109,6 +235,14 @@
     &-list {
       display: flex;
       column-gap: rem(80);
+
+      @include laptop {
+        column-gap: rem(50);
+      }
+
+      @include tablet {
+        flex-direction: column;
+      }
     }
 
     &-item {
@@ -119,8 +253,23 @@
       width: 100%;
 
       &:not(:last-child) {
-        border-right: var(--border);
-        padding-right: rem(80);
+        @include laptop-above {
+          padding-right: rem(80);
+        }
+
+        @include tablet-above {
+          border-right: var(--border);
+          padding-right: rem(50);
+        }
+      }
+
+      @include laptop {
+        padding-block: rem(40);
+        border-bottom: var(--border);
+      }
+
+      @include mobile {
+        padding-block: rem(30);
       }
     }
 
@@ -139,26 +288,34 @@
     &-arrow {
       @include square(rem(44));
 
-      position: absolute;
-      right: 0;
-      top: 50%;
-      transform: translate(0, -50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 50%;
-      background-color: var(--color-accent);
+      @include laptop {
+        @include square(rem(40));
+      }
+    }
+
+    &-title {
+      @include mobile {
+        font-size: rem(16);
+      }
     }
 
     &-type {
       font-size: rem(16);
       color: var(--color-gray-50);
+
+      @include mobile {
+        font-size: rem(14);
+      }
     }
 
     &-statistic {
       font-size: rem(16);
       font-family: var(--font-family-accent);
       color: var(--color-gray-60);
+
+      @include mobile {
+        font-size: rem(14);
+      }
     }
   }
 }

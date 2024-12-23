@@ -21,4 +21,8 @@
     padding: 0 !important;
     flex-shrink: 0;
   }
+
+  @include laptop {
+    font-size: rem(12);
+  }
 }

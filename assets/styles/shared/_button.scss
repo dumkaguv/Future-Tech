@@ -19,4 +19,8 @@
     background-color: var(--color-dark-10);
     border-color: var(--color-accent);
   }
+
+  @include laptop {
+    font-size: rem(14);
+  }
 }

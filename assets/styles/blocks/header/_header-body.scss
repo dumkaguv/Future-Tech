@@ -67,6 +67,10 @@
         height: fluid(40, 50);
       }
 
+      @include laptop {
+        font-size: rem(14);
+      }
+
       @include mobile {
         flex-direction: column;
         row-gap: 1rem;

@@ -493,6 +493,11 @@ button[aria-label]::before {
   background-size: contain;
   background-repeat: no-repeat;
 }
+@media (width <= 90.06125rem) {
+  .icon::after {
+    --size: 1.25rem;
+  }
+}
 
 .icon--arrow-top-right-yellow::after {
   background-image: url("../../../icons/arrow-top-right-yellow.svg");
@@ -527,6 +532,11 @@ button[aria-label]::before {
     color: var(--color-accent);
     background-color: var(--color-dark-10);
     border-color: var(--color-accent);
+  }
+}
+@media (width <= 90.06125rem) {
+  .button {
+    font-size: 0.875rem;
   }
 }
 
@@ -597,6 +607,18 @@ button[aria-label]::before {
   }
 }
 
+.circle-bg-yellow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+}
+
 .header__promo {
   display: flex;
   align-items: center;
@@ -617,6 +639,11 @@ button[aria-label]::before {
   border-radius: 60% !important;
   padding: 0 !important;
   flex-shrink: 0;
+}
+@media (width <= 90.06125rem) {
+  .header__promo {
+    font-size: 0.75rem;
+  }
 }
 
 .header {
@@ -683,6 +710,11 @@ button[aria-label]::before {
 @media (width > 47.99875rem) {
   .header__menu-list {
     height: clamp(2.5rem, 2.3557692308rem + 0.641025641dvw, 3.125rem);
+  }
+}
+@media (width <= 90.06125rem) {
+  .header__menu-list {
+    font-size: 0.875rem;
   }
 }
 @media (width <= 47.99875rem) {
@@ -904,6 +936,12 @@ button[aria-label]::before {
   grid-template-columns: 60% auto;
   grid-template-areas: "title resources" "statistics resources";
 }
+@media (width <= 63.99875rem) {
+  .hero__body {
+    grid-template-columns: 1fr;
+    grid-template-areas: "title" "statistics" "resources";
+  }
+}
 .hero__introduction {
   grid-area: title;
   display: flex;
@@ -911,27 +949,78 @@ button[aria-label]::before {
   padding-top: 9.375rem;
   padding-bottom: 6.25rem;
   padding-right: 3.125rem;
-  border-right: var(--border);
   border-bottom: var(--border);
+}
+@media (width > 63.99875rem) {
+  .hero__introduction {
+    border-right: var(--border);
+  }
+}
+@media (width <= 90.06125rem) {
+  .hero__introduction {
+    padding-block: 6.25rem;
+    padding-right: 2.5rem;
+  }
+}
+@media (width <= 63.99875rem) {
+  .hero__introduction {
+    padding-block: 2.5rem;
+    padding-right: 0;
+  }
+  .hero__introduction::after {
+    width: 100dvw;
+    right: calc(var(--container-padding-x) * -1);
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__introduction {
+    padding-top: 2.5rem;
+    padding-bottom: 1.875rem;
+    padding-right: 0;
+  }
 }
 .hero__subtitle {
   font-size: 1.875rem;
   font-weight: 500;
   font-family: var(--font-family-accent);
   color: var(--color-dark-40);
-  margin-bottom: 1.875rem;
+  margin-bottom: clamp(0.625rem, 0.3365384615rem + 1.2820512821dvw, 1.875rem);
+}
+@media (width <= 90.06125rem) {
+  .hero__subtitle {
+    font-size: 1.375rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__subtitle {
+    font-size: 1.125rem;
+  }
 }
 .hero__title {
-  margin-bottom: 1.25rem;
+  margin-bottom: clamp(0.875rem, 0.7884615385rem + 0.3846153846dvw, 1.25rem);
 }
-.hero__statistics {
-  border-right: var(--border);
-  border-bottom: var(--border);
+@media (width > 63.99875rem) {
+  .hero__statistics {
+    border-right: var(--border);
+    border-bottom: var(--border);
+  }
 }
 .hero__statistics-list {
   display: flex;
-  -moz-column-gap: 6.25rem;
-       column-gap: 6.25rem;
+  -moz-column-gap: 3.125rem;
+       column-gap: 3.125rem;
+}
+@media (width <= 90.06125rem) {
+  .hero__statistics-list {
+    -moz-column-gap: 2.5rem;
+         column-gap: 2.5rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__statistics-list {
+    -moz-column-gap: 1.25rem;
+         column-gap: 1.25rem;
+  }
 }
 .hero__statistics-item {
   display: flex;
@@ -943,15 +1032,59 @@ button[aria-label]::before {
 }
 .hero__statistics-item:not(:last-child) {
   border-right: var(--border);
+  padding-right: 3.125rem;
+}
+@media (width <= 90.06125rem) {
+  .hero__statistics-item:not(:last-child) {
+    padding-right: 2.5rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__statistics-item:not(:last-child) {
+    padding-right: 1.25rem;
+  }
+}
+@media (width <= 90.06125rem) {
+  .hero__statistics-item {
+    padding-block: 1.875rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__statistics-item {
+    padding-block: 1.25rem;
+  }
 }
 .hero__statistics-value {
   font-size: 2.5rem;
   font-weight: 600;
   color: var(--color-light);
 }
+@media (width <= 90.06125rem) {
+  .hero__statistics-value {
+    font-size: 1.875rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__statistics-value {
+    font-size: 1.5rem;
+  }
+}
+.hero__statistics-type {
+  font-size: 0.875rem;
+}
 .hero__description {
   font-size: 1.125rem;
   color: var(--color-gray-50);
+}
+@media (width <= 90.06125rem) {
+  .hero__description {
+    font-size: 1rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__description {
+    font-size: 0.875rem;
+  }
 }
 .hero__statistics {
   grid-area: statistics;
@@ -971,11 +1104,53 @@ button[aria-label]::before {
   background-position: 0 0;
   border-bottom: var(--border);
 }
+@media (width <= 90.06125rem) {
+  .hero__resources {
+    padding-left: 3.125rem;
+    padding-bottom: 3.125rem;
+  }
+}
+@media (width <= 63.99875rem) {
+  .hero__resources {
+    background-size: auto;
+  }
+  .hero__resources::after {
+    width: 100dvw;
+    left: calc(var(--container-padding-x) * -1);
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__resources {
+    padding-top: 6.25rem;
+    padding-left: 1.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+@media (width <= 30.06125rem) {
+  .hero__resources {
+    --offsetX: var(--container-padding-x);
+    margin-left: calc(var(--offsetX) * -1);
+    max-width: unset;
+    width: calc(100% + 2 * var(--offsetX));
+  }
+}
+@media (width <= 30.06125rem) {
+  .hero__resources-button {
+    width: 90%;
+  }
+}
 .hero__resources-team {
   margin-bottom: clamp(1.25rem, 1.1057692308rem + 0.641025641dvw, 1.875rem);
 }
 .hero__resources-title {
+  font-size: 1.5rem;
+  color: var(--color-light);
   margin-bottom: clamp(0.375rem, 0.2596153846rem + 0.5128205128dvw, 0.875rem);
+}
+@media (width <= 90.06125rem) {
+  .hero__resources-title {
+    font-size: 1.25rem;
+  }
 }
 .hero__resources-info {
   margin-bottom: clamp(1.25rem, 1.1057692308rem + 0.641025641dvw, 1.875rem);
@@ -988,6 +1163,17 @@ button[aria-label]::before {
   -moz-column-gap: 5rem;
        column-gap: 5rem;
 }
+@media (width <= 90.06125rem) {
+  .hero__advantages-list {
+    -moz-column-gap: 3.125rem;
+         column-gap: 3.125rem;
+  }
+}
+@media (width <= 63.99875rem) {
+  .hero__advantages-list {
+    flex-direction: column;
+  }
+}
 .hero__advantages-item {
   display: flex;
   flex-direction: column;
@@ -995,9 +1181,27 @@ button[aria-label]::before {
   padding-block: 3.125rem;
   width: 100%;
 }
-.hero__advantages-item:not(:last-child) {
-  border-right: var(--border);
-  padding-right: 5rem;
+@media (width > 90.06125rem) {
+  .hero__advantages-item:not(:last-child) {
+    padding-right: 5rem;
+  }
+}
+@media (width > 63.99875rem) {
+  .hero__advantages-item:not(:last-child) {
+    border-right: var(--border);
+    padding-right: 3.125rem;
+  }
+}
+@media (width <= 90.06125rem) {
+  .hero__advantages-item {
+    padding-block: 2.5rem;
+    border-bottom: var(--border);
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__advantages-item {
+    padding-block: 1.875rem;
+  }
 }
 .hero__advantages-link {
   display: inline-flex;
@@ -1019,22 +1223,34 @@ button[aria-label]::before {
 .hero__advantages-arrow {
   width: 2.75rem;
   height: 2.75rem;
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translate(0, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background-color: var(--color-accent);
+}
+@media (width <= 90.06125rem) {
+  .hero__advantages-arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .hero__advantages-title {
+    font-size: 1rem;
+  }
 }
 .hero__advantages-type {
   font-size: 1rem;
   color: var(--color-gray-50);
 }
+@media (width <= 47.99875rem) {
+  .hero__advantages-type {
+    font-size: 0.875rem;
+  }
+}
 .hero__advantages-statistic {
   font-size: 1rem;
   font-family: var(--font-family-accent);
   color: var(--color-gray-60);
+}
+@media (width <= 47.99875rem) {
+  .hero__advantages-statistic {
+    font-size: 0.875rem;
+  }
 }/*# sourceMappingURL=homeStyles.css.map */
