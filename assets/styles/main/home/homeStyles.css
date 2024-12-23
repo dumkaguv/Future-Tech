@@ -313,10 +313,10 @@ svg * {
   top: 100%;
 }
 .full-vw-line--left::before, .full-vw-line--left::after {
-  right: 99%;
+  right: 99.8%;
 }
 .full-vw-line--right::before, .full-vw-line--right::after {
-  left: 99%;
+  left: 99.8%;
 }
 
 html.is-lock {
@@ -1005,6 +1005,15 @@ button[aria-label]::before {
     border-bottom: var(--border);
   }
 }
+@media (width <= 63.99875rem) {
+  .hero__statistics {
+    border-bottom: var(--border);
+  }
+  .hero__statistics::after {
+    width: 100dvw;
+    left: calc(var(--container-padding-x) * -1);
+  }
+}
 .hero__statistics-list {
   display: flex;
   -moz-column-gap: 3.125rem;
@@ -1108,8 +1117,12 @@ button[aria-label]::before {
 }
 @media (width <= 90.06125rem) {
   .hero__resources {
+    --offsetX: var(--container-padding-x);
     padding-left: 3.125rem;
     padding-bottom: 3.125rem;
+    margin-left: calc(var(--offsetX) * -1);
+    max-width: unset;
+    width: calc(100% + 2 * var(--offsetX));
   }
 }
 @media (width <= 63.99875rem) {
@@ -1126,14 +1139,6 @@ button[aria-label]::before {
     padding-top: 6.25rem;
     padding-left: 1.5rem;
     padding-bottom: 2.5rem;
-  }
-}
-@media (width <= 30.06125rem) {
-  .hero__resources {
-    --offsetX: var(--container-padding-x);
-    margin-left: calc(var(--offsetX) * -1);
-    max-width: unset;
-    width: calc(100% + 2 * var(--offsetX));
   }
 }
 @media (width <= 30.06125rem) {
@@ -1197,6 +1202,10 @@ button[aria-label]::before {
 @media (width <= 90.06125rem) {
   .hero__advantages-item {
     padding-block: 2.5rem;
+  }
+}
+@media (width <= 63.99875rem) {
+  .hero__advantages-item:not(:last-child) {
     border-bottom: var(--border);
   }
 }
@@ -1220,6 +1229,18 @@ button[aria-label]::before {
 @media (hover: none) {
   .hero__advantages-link:active {
     scale: 1.05;
+  }
+}
+@media (width <= 90.06125rem) {
+  .hero__advantages-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+@media (width <= 30.06125rem) {
+  .hero__advantages-icon {
+    width: 1.875rem;
+    height: 1.875rem;
   }
 }
 .hero__advantages-arrow {

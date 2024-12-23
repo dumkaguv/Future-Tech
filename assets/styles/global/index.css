@@ -313,10 +313,10 @@ svg * {
   top: 100%;
 }
 .full-vw-line--left::before, .full-vw-line--left::after {
-  right: 99%;
+  right: 99.8%;
 }
 .full-vw-line--right::before, .full-vw-line--right::after {
-  left: 99%;
+  left: 99.8%;
 }
 
 html.is-lock {
