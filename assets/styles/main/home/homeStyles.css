@@ -313,10 +313,10 @@ svg * {
   top: 100%;
 }
 .full-vw-line--left::before, .full-vw-line--left::after {
-  right: 99.8%;
+  right: 99%;
 }
 .full-vw-line--right::before, .full-vw-line--right::after {
-  left: 99.8%;
+  left: 99%;
 }
 
 html.is-lock {
@@ -1117,17 +1117,17 @@ button[aria-label]::before {
 }
 @media (width <= 90.06125rem) {
   .hero__resources {
-    --offsetX: var(--container-padding-x);
     padding-left: 3.125rem;
     padding-bottom: 3.125rem;
-    margin-left: calc(var(--offsetX) * -1);
-    max-width: unset;
-    width: calc(100% + 2 * var(--offsetX));
   }
 }
 @media (width <= 63.99875rem) {
   .hero__resources {
+    --offsetX: var(--container-padding-x);
     background-size: auto;
+    margin-left: calc(var(--offsetX) * -1);
+    max-width: unset;
+    width: calc(100% + 2 * var(--offsetX));
   }
   .hero__resources::after {
     width: 100dvw;

@@ -189,16 +189,16 @@
     border-bottom: var(--border);
 
     @include laptop {
-      --offsetX: var(--container-padding-x);
       padding-left: rem(50);
       padding-bottom: rem(50);
-      margin-left: calc(var(--offsetX) * -1);
-      max-width: unset;
-      width: calc(100% + 2 * var(--offsetX));
     }
 
     @include tablet {
+      --offsetX: var(--container-padding-x);
       background-size: auto;
+      margin-left: calc(var(--offsetX) * -1);
+      max-width: unset;
+      width: calc(100% + 2 * var(--offsetX));
 
       &::after {
         width: 100dvw;

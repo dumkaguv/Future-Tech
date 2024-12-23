@@ -50,14 +50,14 @@
   &--left {
     &::before,
     &::after {
-      right: 99.8%;
+      right: 99%;
     }
   }
 
   &--right {
     &::before,
     &::after {
-      left: 99.8%;
+      left: 99%;
     }
   }
 }

@@ -1,9 +1,22 @@
 @use "./functions" as *;
 
+$desktop: rem(1600.98);
 $laptop: rem(1440.98);
 $tablet: rem(1023.98);
 $mobile: rem(767.98);
 $mobile-s: rem(480.98);
+
+@mixin desktop-above {
+  @media (width > $desktop) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (width <= $desktop) {
+    @content;
+  }
+}
 
 @mixin laptop-above {
   @media (width > $laptop) {
