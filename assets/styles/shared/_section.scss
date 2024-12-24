@@ -1,0 +1,51 @@
+@use "../helpers" as *;
+
+.section {
+  border-block: var(--border);
+
+  &__header {
+    padding-block: rem(120);
+    background-color: var(--color-dark-10);
+    border-bottom: var(--border);
+
+    @include laptop {
+      font-size: rem(44);
+      padding-block: rem(80);
+    }
+
+    @include mobile {
+      font-size: rem(28);
+      padding-block: rem(50);
+    }
+
+    &-subtitle {
+      font-size: rem(20);
+      font-weight: 500;
+      color: var(--color-light);
+
+      @include laptop {
+        font-size: rem(16);
+      }
+
+      @include mobile {
+        font-size: rem(14);
+      }
+    }
+
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-info {
+      display: inline-flex;
+      flex-direction: column;
+      row-gap: rem(16);
+
+      @include laptop {
+        row-gap: rem(10);
+      }
+    }
+  }
+}

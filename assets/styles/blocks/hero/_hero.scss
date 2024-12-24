@@ -195,6 +195,7 @@
 
     @include tablet {
       --offsetX: var(--container-padding-x);
+      
       background-size: auto;
       margin-left: calc(var(--offsetX) * -1);
       max-width: unset;
