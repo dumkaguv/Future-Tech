@@ -3,6 +3,12 @@
 .section {
   border-block: var(--border);
 
+  &__title {
+    @include tablet {
+      margin-bottom: rem(20);
+    }
+  }
+
   &__header {
     padding-block: rem(120);
     background-color: var(--color-dark-10);
@@ -16,6 +22,13 @@
     @include mobile {
       font-size: rem(28);
       padding-block: rem(50);
+    }
+
+    &-button {
+      @include tablet {
+        max-width: rem(360);
+        width: 100%;
+      }
     }
 
     &-subtitle {
@@ -36,6 +49,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      column-gap: rem(25);
+
+      @include tablet {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: rem(10);
+      }
     }
 
     &-info {

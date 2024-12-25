@@ -283,6 +283,18 @@ svg * {
   overflow: hidden !important;
 }
 
+@media (width > 63.99875rem) {
+  .visible-tablet {
+    display: none !important;
+  }
+}
+
+@media (width <= 63.99875rem) {
+  .hidden-tablet {
+    display: none !important;
+  }
+}
+
 @media (width <= 47.99875rem) {
   .hidden-mobile {
     display: none !important;

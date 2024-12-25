@@ -1,7 +1,7 @@
 @use "../helpers" as *;
 
 .tabs {
-  padding-block: rem(50);
+  padding-block: fluid(20, 50);
   border-bottom: var(--border);
 
   &__list {
@@ -9,10 +9,16 @@
     column-gap: rem(20);
     overflow-x: auto;
 
+    &::-webkit-scrollbar {
+      @include tablet {
+        display: none;
+      }
+    }
+
     &-item {
       max-width: rem(250);
       width: 100%;
-      padding: rem(30) rem(24);
+      padding: fluid(18, 30) fluid(16, 24);
       transition-duration: var(--transition-duration);
       cursor: pointer;
 
@@ -24,7 +30,7 @@
     }
 
     &-title {
-      font-size: rem(18);
+      font-size: fluid(14, 18);
       font-weight: 400;
 
       &:not(.is-active) {
