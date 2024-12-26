@@ -2,6 +2,12 @@
 
 .card {
 
+  &-row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+
   @include tablet-above {
     padding: rem(60) 0 rem(60) rem(60);
   }

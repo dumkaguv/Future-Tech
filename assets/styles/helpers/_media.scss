@@ -2,6 +2,7 @@
 
 $desktop: rem(1600.98);
 $laptop: rem(1440.98);
+$tablet-l: rem(1279.98);
 $tablet: rem(1023.98);
 $mobile: rem(767.98);
 $mobile-s: rem(480.98);
@@ -26,6 +27,18 @@ $mobile-s: rem(480.98);
 
 @mixin laptop {
   @media (width <= $laptop) {
+    @content;
+  }
+}
+
+@mixin tablet-l-above {
+  @media (width > $tablet-l) {
+    @content;
+  }
+}
+
+@mixin tablet-l {
+  @media (width <= $tablet-l) {
     @content;
   }
 }
