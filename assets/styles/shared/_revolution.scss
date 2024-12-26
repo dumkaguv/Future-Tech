@@ -1,0 +1,69 @@
+@use "../helpers" as *;
+
+.revolution {
+  padding-bottom: rem(120);
+
+  @include laptop {
+    padding-bottom: rem(80);
+  }
+
+  &__list {
+    display: flex;
+    background-color: var(--color-dark);
+    border-radius: fluid(10, 12);
+    justify-content: space-between;
+    border: var(--border);
+    column-gap: rem(20);
+    padding: rem(20);
+
+    @include laptop {
+      column-gap: rem(10);
+      padding: rem(10);
+    }
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: rem(10);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(20);
+    padding: rem(40);
+    background-color: var(--color-dark-10);
+    border-radius: fluid(10, 12);
+    border: var(--border);
+    height: 100%;
+
+    @include laptop {
+      padding: rem(30);
+      row-gap: rem(16);
+    }
+
+    @include mobile {
+      padding: rem(24);
+      row-gap: rem(10);
+    }
+
+    &-info {
+      color: var(--color-gray-60);
+    }
+  }
+
+  &__link {
+    font-size: rem(22);
+    font-weight: 600;
+    color: var(--color-light);
+    width: 100%;
+
+    @include laptop {
+      font-size: rem(18);
+    }
+
+    @include mobile {
+      font-size: rem(16);
+    }
+  }
+}

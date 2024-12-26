@@ -31,9 +31,30 @@
       }
     }
 
+    &-logo {
+      margin-right: fluid(10, 55);
+
+      @include laptop {
+        @include square(rem(120));
+      }
+
+      @include mobile {
+        @include square(rem(60));
+        
+        margin-right: 0;
+      }
+
+      &-wrapper {
+        display: flex;
+        align-items: center;
+        column-gap: rem(20);
+      }
+    }
+
     &-subtitle {
       font-size: rem(20);
       font-weight: 500;
+      height: fit-content;
       color: var(--color-light);
 
       @include laptop {
@@ -67,5 +88,9 @@
         row-gap: rem(10);
       }
     }
+  }
+
+  &__description {
+    font-size: fluid(14, 18);
   }
 }
