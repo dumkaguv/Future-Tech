@@ -1,3 +1,5 @@
+import pxToRem from "../utils/pxToRem.js";
+
 export default class MobileMenu {
   static selectors = {
     root: "[data-js-header]",
@@ -46,7 +48,7 @@ export default class MobileMenu {
   };
 
   reducePromoLinkContent = () => {
-    const widthInRem = this.pxToRem(window.innerWidth);
+    const widthInRem = pxToRem(window.innerWidth);
     const textElement = this.promoLinkElement?.firstElementChild;
 
     if (textElement && widthInRem <= 47.99) {
@@ -56,11 +58,4 @@ export default class MobileMenu {
       textElement.textContent = this.promoLinkDesktopContent;
     }
   };
-
-  pxToRem(px) {
-    const rootFontSize = parseFloat(
-      getComputedStyle(document.documentElement).fontSize
-    );
-    return px / rootFontSize;
-  }
 }

@@ -249,6 +249,7 @@ svg * {
   --container-padding-x: 1rem;
   --transition-duration: 0.2s;
   --border: 0.0625rem solid var(--color-dark-15);
+  --100vw: calc(100dvw - var(--scrollbar-width));
   /* Scrollbar */
   --scrollbar-width: 0.75rem;
   --scrollbar-thumb-color: #4f4e4e;
@@ -312,7 +313,7 @@ svg * {
 }
 .full-vw-line::before, .full-vw-line::after {
   position: absolute;
-  width: calc((100dvw - var(--container-width)) / 2);
+  width: calc((var(--100vw) - var(--container-width)) / 2);
   height: 0.0625rem;
   background-color: var(--color-dark-15);
 }

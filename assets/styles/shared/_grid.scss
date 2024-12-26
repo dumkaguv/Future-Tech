@@ -19,4 +19,16 @@
       grid-template-columns: 1fr;
     }
   }
+
+  &--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+
+    @include tablet-l {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &--2-rows {
+    grid-template-rows: repeat(2, 1fr);
+  }
 }

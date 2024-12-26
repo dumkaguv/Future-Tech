@@ -1,0 +1,119 @@
+@use "../helpers" as *;
+
+.reviews {
+  &__list {
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    @include tablet-l {
+      width: fit-content;
+
+      &:nth-child(odd) {
+        padding-right: rem(35);
+        border-right: var(--border);
+      }
+
+      &:nth-child(even) {
+        padding-left: rem(35);
+      }
+
+      &:not(:nth-last-child(-n + 2)) {
+        border-bottom: var(--border);
+      }
+    }
+
+    @include mobile {
+      border-bottom: var(--border);
+
+      &:nth-child(odd) {
+        border-right: none;
+        padding-right: 0;
+      }
+
+      &:nth-child(even) {
+        padding-left: 0;
+      }
+    }
+
+    @include tablet-l-above {
+      &:not(:nth-child(3n)) {
+        border-right: var(--border);
+        padding-right: rem(50);
+
+        @include laptop {
+          padding-right: rem(40);
+        }
+      }
+
+      &:not(:first-child):not(:nth-child(4n)) {
+        padding-left: rem(50);
+
+        @include laptop {
+          padding-left: rem(40);
+        }
+      }
+
+      &:nth-child(-n + 3) {
+        border-bottom: var(--border);
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(60, 70);
+    padding-block: fluid(40, 80);
+
+    @include tablet-l-above {
+      max-width: rem(465);
+      width: 100%;
+    }
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: fluid(10, 12);
+    }
+
+    &-body {
+      position: relative;
+    }
+
+    &-name {
+      font-size: fluid(18, 20);
+    }
+
+    &-image {
+      @include laptop {
+        width: rem(50);
+        height: rem(50);
+      }
+    }
+
+    &-location {
+      font-size: fluid(16, 18);
+      color: var(--color-dark-40);
+      font-weight: 400;
+    }
+
+    &-review-text {
+      font-size: fluid(14, 18);
+      text-align: center;
+      color: var(--color-light);
+      padding: rem(50) rem(30) rem(30) rem(30);
+      border-radius: fluid(8, 12);
+      border: var(--border);
+      background-color: var(--color-dark-10);
+
+      @include laptop {
+        padding: rem(40) rem(24) rem(24) rem(24);
+      }
+    }
+  }
+}

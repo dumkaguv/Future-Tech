@@ -26,6 +26,8 @@
 
   --border: #{rem(1)} solid var(--color-dark-15);
 
+  --100vw: calc(100dvw - var(--scrollbar-width));
+
   @include laptop {
     --container-width: #{rem(1280)};
   }
