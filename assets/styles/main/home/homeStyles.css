@@ -1229,7 +1229,7 @@ button[aria-label]::before {
   }
 }
 @media (width <= 47.99875rem) {
-  .reviews__item {
+  .reviews__item:not(:last-child) {
     border-bottom: var(--border);
   }
   .reviews__item:nth-child(odd) {
@@ -1337,6 +1337,7 @@ button[aria-label]::before {
     padding: 0.5rem 0.625rem;
     -moz-column-gap: 0.1875rem;
          column-gap: 0.1875rem;
+    top: -1.125rem;
   }
 }
 @media (width <= 90.06125rem) {

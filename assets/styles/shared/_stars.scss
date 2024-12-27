@@ -21,6 +21,7 @@
   @include laptop {
     padding: rem(8) rem(10);
     column-gap: rem(3);
+    top: rem(-18);
   }
 
   &__icon {

@@ -27,8 +27,10 @@
     }
 
     @include mobile {
-      border-bottom: var(--border);
-
+      &:not(:last-child) {
+        border-bottom: var(--border);
+      }
+    
       &:nth-child(odd) {
         border-right: none;
         padding-right: 0;
