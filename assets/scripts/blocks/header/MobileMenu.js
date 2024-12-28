@@ -1,4 +1,4 @@
-import pxToRem from "../utils/pxToRem.js";
+import pxToRem from "../../utils/pxToRem.js";
 
 export default class MobileMenu {
   static selectors = {

@@ -33,6 +33,7 @@
   animation-fill-mode: both;
   animation-timeline: scroll();
   animation-range: 6.25rem 12.5rem;
+  border-bottom: var(--border);
 }
 @keyframes scrolling-frames {
   to {

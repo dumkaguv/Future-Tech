@@ -9,6 +9,8 @@
   animation-timeline: scroll();
   animation-range: rem(100) rem(200);
 
+  border-bottom: var(--border);
+
   @keyframes scrolling-frames {
     to {
       box-shadow: 0 0 1rem 0 var(--color-dark-40);

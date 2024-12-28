@@ -53,10 +53,23 @@
   }
 
   &__link {
+    display: inline-flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
     font-size: rem(22);
     font-weight: 600;
     color: var(--color-light);
     width: 100%;
+
+    @include hover {
+      scale: 1.05;
+    }
+
+    &-icon {
+      @include square(rem(44));
+    }
 
     @include laptop {
       font-size: rem(18);
