@@ -1,6 +1,5 @@
 class Posts {
   selectors = {
-    root: "[data-js-posts]",
     likeIcon: "[data-js-post-like-icon]",
     likeButton: "[data-js-post-like-button]",
   };
@@ -10,7 +9,9 @@ class Posts {
   };
 
   constructor() {
-    this.rootElement = document.querySelector(this.selectors.root);
+    this.likeButtonElements = document.querySelectorAll(
+      this.selectors.likeButton
+    )
     this.bindEvents();
   }
 
@@ -31,7 +32,9 @@ class Posts {
   };
 
   bindEvents() {
-    this.rootElement.addEventListener("click", this.onClick);
+    this.likeButtonElements.forEach((element) => {
+      element.addEventListener("click", this.onClick);
+    })
   }
 }
 

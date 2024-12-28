@@ -1,0 +1,48 @@
+@use "../helpers" as *;
+
+.news {
+  padding-block: fluid(40, 80);
+  border-top: var(--border);
+
+  &__list {
+    display: flex;
+    column-gap: fluid(20, 30);
+
+    @include tablet-l {
+      align-self: center;
+      justify-self: center;
+      flex-direction: column;
+      row-gap: rem(30);
+    }
+
+    @include mobile {
+      align-self: flex-start;
+      justify-self: start;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(16);
+
+    &-image {
+      border-radius: fluid(10, 12);
+      width: fluid(360, 512);
+      height: fluid(185, 222);
+    }
+
+    &-title {
+      display: flex;
+      flex-direction: column;
+      row-gap: fluid(4, 10);
+    }
+
+    &-category {
+      color: var(--color-gray-60);
+      font-size: fluid(14, 20);
+    }
+  }
+
+
+}

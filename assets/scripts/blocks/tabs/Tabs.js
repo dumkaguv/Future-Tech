@@ -1,5 +1,6 @@
 import getInitialAllTabsData from "./allTabsData.js";
-import Posts from "../posts/Posts.js"
+import allTabsDataNewsPage from "./allTabsDataNewsPage.js";
+import Posts from "../posts/Posts.js";
 
 const rootSelector = "[data-js-tabs]";
 const postSelector = "[data-js-post]";
@@ -22,7 +23,7 @@ class Tabs {
     tabIndex: "tabindex",
   };
 
-  constructor(rootElement) {
+  constructor(rootElement, isNewsPage = false) {
     this.rootElement = rootElement;
     this.buttonElements = this.rootElement.querySelectorAll(
       this.selectors.button
@@ -35,16 +36,17 @@ class Tabs {
         buttonElement.classList.contains(this.stateClasses.isActive)
       ),
     };
+    this.isNewsPage = isNewsPage;
     this.limitTabsIndex = this.buttonElements.length - 1;
     this.bindEvents();
   }
 
   updateTabContent(activeTabIndex) {
     document.querySelector(postsSelector).remove();
-    this.rootElement.insertAdjacentHTML(
-      "afterend",
-      getInitialAllTabsData()
-    );
+    const initialData = this.isNewsPage
+      ? allTabsDataNewsPage()
+      : getInitialAllTabsData();
+    this.rootElement.insertAdjacentHTML("afterend", initialData);
 
     if (activeTabIndex === 0) {
       return;
@@ -64,8 +66,11 @@ class Tabs {
       }
     });
 
-    if (!document.querySelector(".posts__list").querySelectorAll(postSelector).length) {
-      console.log(1)
+    if (
+      !document
+        .querySelector(".posts__list")
+        .querySelectorAll(postSelector).length
+    ) {
     }
   }
 
@@ -89,7 +94,7 @@ class Tabs {
   onButtonClick(buttonIndex) {
     this.state.activeTabIndex = buttonIndex;
     this.updateUI();
-    new Posts()
+    new Posts();
   }
 
   bindEvents() {
@@ -107,14 +112,15 @@ class Tabs {
 }
 
 class TabsCollection {
-  constructor() {
+  constructor(isNewsPage = false) {
+    this.isNewsPage = isNewsPage;
     this.init();
   }
 
   init() {
     document
       .querySelectorAll(rootSelector)
-      .forEach((element) => new Tabs(element));
+      .forEach((element) => new Tabs(element, this.isNewsPage));
   }
 }
 

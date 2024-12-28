@@ -69,6 +69,10 @@
 
     &-icon {
       @include square(rem(44));
+
+      @include mobile {
+        @include square(rem(32));
+      }
     }
 
     @include laptop {

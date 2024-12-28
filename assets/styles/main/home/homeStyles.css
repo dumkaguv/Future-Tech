@@ -1428,6 +1428,12 @@ button[aria-label]::before {
   width: 2.75rem;
   height: 2.75rem;
 }
+@media (width <= 47.99875rem) {
+  .revolution__link-icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
 @media (width <= 90.06125rem) {
   .revolution__link {
     font-size: 1.125rem;

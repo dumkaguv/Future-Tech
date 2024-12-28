@@ -67,9 +67,7 @@
   &__actions {
     display: flex;
     justify-content: space-between;
-
-    @include mobile {
-      align-items: center;
-    }
+    column-gap: rem(20);
+    align-items: center;
   }
 }
