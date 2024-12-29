@@ -643,6 +643,7 @@ button[aria-label]::before {
 
 .section {
   border-block: var(--border);
+  scroll-margin-top: var(--header-height);
 }
 @media (width <= 63.99875rem) {
   .section__title {

@@ -2,6 +2,7 @@
 
 .section {
   border-block: var(--border);
+  scroll-margin-top: var(--header-height);
 
   &__title {
     @include tablet {

@@ -46,3 +46,24 @@
   clip: rect(0 0 0 0) !important;
   overflow: hidden !important;
 }
+
+@mixin full-vw-centered-line(
+  $property: top,
+  $left: 50%,
+  $right: auto,
+  $translate: -50%
+) {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: $left;
+    right: $right;
+    #{$property}: 0;
+    translate: $translate;
+    width: var(--100vw);
+    height: rem(1);
+    background-color: var(--color-dark-15);
+  }
+}
