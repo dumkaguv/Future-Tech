@@ -1603,6 +1603,40 @@ button[aria-label]::before {
   height: fit-content;
 }
 
+.grid {
+  display: grid;
+}
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.875rem;
+}
+@media (width <= 90.06125rem) {
+  .grid--2-cols {
+    gap: 1.25rem;
+  }
+}
+@media (width <= 47.99875rem) {
+  .grid--2-cols {
+    gap: 0.625rem;
+  }
+}
+@media (width <= 30.06125rem) {
+  .grid--2-cols {
+    grid-template-columns: 1fr;
+  }
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+@media (width <= 79.99875rem) {
+  .grid--3-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.grid--2-rows {
+  grid-template-rows: repeat(2, 1fr);
+}
+
 .header__promo {
   display: flex;
   align-items: center;
