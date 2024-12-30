@@ -23,6 +23,10 @@
     align-items: center;
     column-gap: fluid(50, 80);
 
+    &-text {
+      white-space: nowrap;
+    }
+
     @include tablet {
       align-items: flex-start;
       flex-direction: column;

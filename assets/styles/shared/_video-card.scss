@@ -20,4 +20,33 @@
   &__player {
     width: 100%;
   }
+
+  &__info {
+    display: flex;
+    column-gap: fluid(14, 20);
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: rem(14);
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      column-gap: rem(4);
+      width: 100%;
+
+      @include mobile-above {
+        max-width: rem(292);
+      }
+    }
+  }
+
+  &__description {
+    @include mobile {
+      &:not(:last-child) {
+        margin-bottom: rem(20);
+      }
+    }
+  }
 }

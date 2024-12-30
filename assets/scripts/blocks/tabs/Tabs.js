@@ -88,6 +88,7 @@ class Tabs {
       );
     });
 
+    
     this.updateTabContent(activeTabIndex);
   }
 
