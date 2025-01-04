@@ -1,5 +1,3 @@
-import pxToRem from "../../utils/pxToRem.js";
-
 export default class MobileMenu {
   static selectors = {
     root: "[data-js-header]",
@@ -34,7 +32,6 @@ export default class MobileMenu {
       "click",
       this.onBurgerButtonClick
     );
-    window.addEventListener("resize", this.reducePromoLinkContent);
   }
 
   onBurgerButtonClick = () => {
@@ -45,17 +42,5 @@ export default class MobileMenu {
     document.documentElement.classList.toggle(
       MobileMenu.stateClasses.isLock
     );
-  };
-
-  reducePromoLinkContent = () => {
-    const widthInRem = pxToRem(window.innerWidth);
-    const textElement = this.promoLinkElement?.firstElementChild;
-
-    if (textElement && widthInRem <= 47.99) {
-      textElement.textContent =
-        "Subscribe to our Newsletter For Blogs and Resources";
-    } else {
-      textElement.textContent = this.promoLinkDesktopContent;
-    }
   };
 }

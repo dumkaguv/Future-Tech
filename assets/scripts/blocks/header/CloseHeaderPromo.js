@@ -45,7 +45,6 @@ export default class CloseHeaderPromo {
   }
 
   bindEvents() {
-    // Делегирование событий: добавляем обработчик на корневой элемент
     this.rootElement.addEventListener("click", this.onPromoButton);
   }
 
