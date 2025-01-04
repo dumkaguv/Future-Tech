@@ -84,6 +84,7 @@
       display: inline-flex;
       flex-direction: column;
       row-gap: rem(16);
+      width: 100%;
 
       @include laptop {
         row-gap: rem(10);

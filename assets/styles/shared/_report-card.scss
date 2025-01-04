@@ -1,0 +1,50 @@
+@use "../helpers" as *;
+
+.report-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(20, 30);
+  width: 100%;
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(10, 14);
+    flex-grow: 1;
+  }
+
+  &__image {
+    border-radius: fluid(10, 12);
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: fluid(16, 22);
+  }
+
+  &__description {
+    font-size: fluid(14, 18);
+    color: var(--color-gray-60);
+  }
+
+  &__actions {
+    display: flex;
+    column-gap: fluid(10, 20);
+
+    @include tablet-l {
+      row-gap: rem(15);
+      flex-direction: column;
+    }
+
+    @include tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__button {
+    @include tablet-above {
+      flex: 1;
+    }
+    
+  }
+}

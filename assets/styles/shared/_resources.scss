@@ -38,6 +38,7 @@
   &__row {
     display: flex;
     flex-direction: row;
+    align-items: stretch;
     column-gap: fluid(14, 20);
 
     @include mobile {
@@ -63,6 +64,11 @@
     background-color: var(--color-dark-10);
     border: var(--border);
     border-radius: fluid(8, 13);
+    align-items: center;
+
+    @include mobile {
+      width: 100%;
+    }
 
     &-info {
       column-gap: rem(4);
@@ -70,6 +76,10 @@
 
     &--grow {
       flex-grow: 1;
+    }
+
+    &--flex-1 {
+      flex: 1;
     }
   }
 }

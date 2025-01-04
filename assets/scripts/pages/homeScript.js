@@ -5,9 +5,9 @@ import Posts from "../blocks/posts/Posts.js";
 import defineHeaderHeightCSSVar from "../utils/defineHeaderHeightCSSVar.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  defineHeaderHeightCSSVar()
+  defineHeaderHeightCSSVar();
 
   new Header();
-  new TabsCollection();
+  new TabsCollection(["Home"]);
   new Posts();
 });

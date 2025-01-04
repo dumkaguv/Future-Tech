@@ -1,6 +1,15 @@
 import getInitialAllTabsData from "./allTabsData.js";
 import allTabsDataNewsPage from "./allTabsDataNewsPage.js";
+import allTabsDataResourcesPage from "./allTabsDataResourcesPage.js";
 import Posts from "../posts/Posts.js";
+
+const initialPostsData = {
+  categories: {
+    Home: getInitialAllTabsData(),
+    News: allTabsDataNewsPage(),
+    Resources: allTabsDataResourcesPage(),
+  },
+};
 
 const rootSelector = "[data-js-tabs]";
 const postSelector = "[data-js-post]";
@@ -23,7 +32,7 @@ class Tabs {
     tabIndex: "tabindex",
   };
 
-  constructor(rootElement, isNewsPage = false) {
+  constructor(rootElement, postsCategories = []) {
     this.rootElement = rootElement;
     this.buttonElements = this.rootElement.querySelectorAll(
       this.selectors.button
@@ -36,25 +45,28 @@ class Tabs {
         buttonElement.classList.contains(this.stateClasses.isActive)
       ),
     };
-    this.isNewsPage = isNewsPage;
+    this.postsCategories = postsCategories;
     this.limitTabsIndex = this.buttonElements.length - 1;
     this.bindEvents();
   }
 
   updateTabContent(activeTabIndex) {
     document.querySelector(postsSelector).remove();
-    const initialData = this.isNewsPage
-      ? allTabsDataNewsPage()
-      : getInitialAllTabsData();
+    const categories = this.postsCategories.map((category) => {
+      return Object.keys(initialPostsData.categories).find(
+        (key) => key === category
+      );
+    });
+    const initialData = initialPostsData.categories[categories];
     this.rootElement.insertAdjacentHTML("afterend", initialData);
-
-    if (activeTabIndex === 0) {
-      return;
-    }
 
     const buttonTitleElement =
       this.buttonTitleElements[activeTabIndex].textContent.trim();
     const postsElement = document.querySelectorAll(postSelector);
+
+    if (activeTabIndex === 0 && buttonTitleElement === "All") {
+      return;
+    }
 
     postsElement.forEach((post) => {
       const postCategory = post
@@ -65,13 +77,6 @@ class Tabs {
         post?.remove();
       }
     });
-
-    if (
-      !document
-        .querySelector(".posts__list")
-        .querySelectorAll(postSelector).length
-    ) {
-    }
   }
 
   updateUI() {
@@ -88,7 +93,6 @@ class Tabs {
       );
     });
 
-    
     this.updateTabContent(activeTabIndex);
   }
 
@@ -113,15 +117,15 @@ class Tabs {
 }
 
 class TabsCollection {
-  constructor(isNewsPage = false) {
-    this.isNewsPage = isNewsPage;
+  constructor(postsCategories = []) {
+    this.postsCategories = postsCategories;
     this.init();
   }
 
   init() {
     document
       .querySelectorAll(rootSelector)
-      .forEach((element) => new Tabs(element, this.isNewsPage));
+      .forEach((element) => new Tabs(element, this.postsCategories));
   }
 }
 

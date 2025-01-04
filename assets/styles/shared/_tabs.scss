@@ -1,8 +1,35 @@
 @use "../helpers" as *;
 
 .tabs {
-  padding-block: fluid(20, 50);
-  border-bottom: var(--border);
+  width: 100%;
+
+  &:not(.tabs--compact) {
+    padding-block: fluid(20, 50);
+    border-bottom: var(--border);
+  }
+
+  &--compact {
+    .tabs__inner {
+      padding: 0;
+    }
+
+    .tabs__list {
+      padding: rem(10);
+      column-gap: rem(10);
+      background-color: var(--color-dark);
+      border: var(--border);
+      border-radius: rem(10);
+
+      &-item {
+        padding: fluid(14, 18) fluid(20, 38);
+        border-radius: rem(8);
+
+        &.is-active {
+          background-color: var(--color-dark-15);
+        }
+      }
+    }
+  }
 
   &__list {
     display: flex;
