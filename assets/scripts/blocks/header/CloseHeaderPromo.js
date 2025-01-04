@@ -10,15 +10,21 @@ export default class CloseHeaderPromo {
   };
 
   constructor() {
-    this.rootElement = document.querySelector(CloseHeaderPromo.selectors.root);
+    this.rootElement = document.querySelector(
+      CloseHeaderPromo.selectors.root
+    );
     this.bindEvents();
     this.renderHeaderPromo();
   }
 
   onPromoButton = (event) => {
-    const closeButton = event.target.closest(CloseHeaderPromo.selectors.closePromoButton);
+    const closeButton = event.target.closest(
+      CloseHeaderPromo.selectors.closePromoButton
+    );
     if (closeButton) {
-      const promoElement = closeButton.closest(CloseHeaderPromo.selectors.headerPromo);
+      const promoElement = closeButton.closest(
+        CloseHeaderPromo.selectors.headerPromo
+      );
       promoElement?.remove();
       this.setClosedInCurrentSession();
     }
@@ -26,10 +32,15 @@ export default class CloseHeaderPromo {
 
   renderHeaderPromo() {
     const wasClosed = Boolean(
-      sessionStorage.getItem(CloseHeaderPromo.sessionStorageParams.wasClosedInCurrentSession)
+      sessionStorage.getItem(
+        CloseHeaderPromo.sessionStorageParams.wasClosedInCurrentSession
+      )
     );
     if (!wasClosed) {
-      this.rootElement.insertAdjacentHTML("afterbegin", this.headerPromoHTML());
+      this.rootElement.insertAdjacentHTML(
+        "afterbegin",
+        this.headerPromoHTML()
+      );
     }
   }
 
