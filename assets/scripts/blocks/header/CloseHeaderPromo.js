@@ -5,48 +5,42 @@ export default class CloseHeaderPromo {
     closePromoButton: "[data-js-header-close-promo]",
   };
 
-  static localStorageParams = {
+  static sessionStorageParams = {
     wasClosedInCurrentSession: "wasClosedInCurrentSession",
   };
 
   constructor() {
-    this.rootElement = document.querySelector(
-      CloseHeaderPromo.selectors.root
-    );
-    this.headerPromoElement = this.rootElement.querySelector(
-      CloseHeaderPromo.selectors.headerPromo
-    );
-    this.closePromoButtonElement = this.rootElement.querySelector(
-      CloseHeaderPromo.selectors.closePromoButton
-    );
+    this.rootElement = document.querySelector(CloseHeaderPromo.selectors.root);
     this.bindEvents();
     this.renderHeaderPromo();
   }
 
-  onPromoButton = () => {
-    this?.headerPromoElement?.remove();
-    this.setClosedInCurrentSession();
+  onPromoButton = (event) => {
+    const closeButton = event.target.closest(CloseHeaderPromo.selectors.closePromoButton);
+    if (closeButton) {
+      const promoElement = closeButton.closest(CloseHeaderPromo.selectors.headerPromo);
+      promoElement?.remove();
+      this.setClosedInCurrentSession();
+    }
   };
 
   renderHeaderPromo() {
-    const wasClosed = Boolean(localStorage.getItem(
-      CloseHeaderPromo.localStorageParams.wasClosedInCurrentSession
-    ));
+    const wasClosed = Boolean(
+      sessionStorage.getItem(CloseHeaderPromo.sessionStorageParams.wasClosedInCurrentSession)
+    );
     if (!wasClosed) {
       this.rootElement.insertAdjacentHTML("afterbegin", this.headerPromoHTML());
     }
   }
 
   bindEvents() {
-    this?.closePromoButtonElement?.addEventListener(
-      "click",
-      this.onPromoButton
-    );
+    // Делегирование событий: добавляем обработчик на корневой элемент
+    this.rootElement.addEventListener("click", this.onPromoButton);
   }
 
   setClosedInCurrentSession() {
-    localStorage.setItem(
-      CloseHeaderPromo.localStorageParams.wasClosedInCurrentSession,
+    sessionStorage.setItem(
+      CloseHeaderPromo.sessionStorageParams.wasClosedInCurrentSession,
       "true"
     );
   }
