@@ -1,6 +1,7 @@
 import getInitialAllTabsData from "./allTabsData.js";
 import allTabsDataNewsPage from "./allTabsDataNewsPage.js";
 import allTabsDataResourcesPage from "./allTabsDataResourcesPage.js";
+import getEmptyTabData from "./getEmptyTabData.js";
 import Posts from "../posts/Posts.js";
 
 const initialPostsData = {
@@ -77,6 +78,12 @@ class Tabs {
         post?.remove();
       }
     });
+
+    if (!document?.querySelector(".posts__list")?.children?.length) {
+      document
+        ?.querySelector(".posts__list")
+        ?.insertAdjacentHTML("beforeend", getEmptyTabData());
+    }
   }
 
   updateUI() {

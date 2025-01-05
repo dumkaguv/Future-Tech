@@ -68,7 +68,7 @@ export default class CloseHeaderPromo {
         >
           X
         </button>
-        <a class="header__promo-link" href="./" data-js-header-promo-link>
+        <a class="header__promo-link" href="./contact.html" data-js-header-promo-link>
           <span class="icon icon--arrow-top-right-yellow">
             Subscribe to our Newsletter For New & latest Blogs and
             Resources
