@@ -103,7 +103,7 @@
       }
     }
 
-    @include tablet {
+    @include tablet-l {
       --columns: 2;
     }
   }

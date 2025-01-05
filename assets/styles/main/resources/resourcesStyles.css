@@ -952,7 +952,7 @@ button[aria-label]::before {
     background-color: var(--color-dark-15);
   }
 }
-@media (width <= 63.99875rem) {
+@media (width <= 79.99875rem) {
   .bordered-grid--4-cols {
     --columns: 2;
   }
