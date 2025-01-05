@@ -4,6 +4,22 @@
   padding-block: fluid(40, 80);
   border-top: var(--border);
 
+  &__header {
+    padding-bottom: fluid(40, 60);
+    
+    &-inner {
+      display: flex;
+      align-items: center;
+      column-gap: rem(25);
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    font-size: fluid(20, 28);
+    color: #CCC;
+  }
+
   &__list {
     display: flex;
     column-gap: fluid(20, 30);
@@ -43,6 +59,4 @@
       font-size: fluid(14, 20);
     }
   }
-
-
 }

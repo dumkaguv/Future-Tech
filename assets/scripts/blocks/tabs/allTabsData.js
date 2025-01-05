@@ -24,12 +24,12 @@ export default function getInitialAllTabsData() {
                       </p>
                     </div>
                     <div class="post__item-view visible-tablet">
-                      <button
+                      <a
                         class="post__item-button button icon icon--arrow-top-right-yellow"
-                        type="button"
+                        href="./blogs.html"
                       >
                         View Blog
-                      </button>
+                      </a>
                     </div>
                   </div>
                   <div class="post__item-info">
@@ -123,12 +123,12 @@ export default function getInitialAllTabsData() {
                     </div>
                   </div>
                   <div class="post__item-view hidden-tablet">
-                    <button
+                    <a
                       class="post__item-button button icon icon--arrow-top-right-yellow"
-                      type="button"
+                      href="./blogs.html"
                     >
                       View Blog
-                    </button>
+                    </a>
                   </div>
                 </div>
               </article>
@@ -155,12 +155,12 @@ export default function getInitialAllTabsData() {
                       </p>
                     </div>
                     <div class="post__item-view visible-tablet">
-                      <button
+                      <a
                         class="post__item-button button icon icon--arrow-top-right-yellow"
-                        type="button"
+                        href="./blogs.html"
                       >
                         View Blog
-                      </button>
+                      </a>
                     </div>
                   </div>
                   <div class="post__item-info">
@@ -253,12 +253,12 @@ export default function getInitialAllTabsData() {
                     </div>
                   </div>
                   <div class="post__item-view hidden-tablet">
-                    <button
+                    <a
                       class="post__item-button button icon icon--arrow-top-right-yellow"
-                      type="button"
+                      href="./blogs.html"
                     >
                       View Blog
-                    </button>
+                    </a>
                   </div>
                 </div>
               </article>
@@ -285,12 +285,12 @@ export default function getInitialAllTabsData() {
                       </p>
                     </div>
                     <div class="post__item-view visible-tablet">
-                      <button
+                      <a
                         class="post__item-button button icon icon--arrow-top-right-yellow"
-                        type="button"
+                        href="./blogs.html"
                       >
                         View Blog
-                      </button>
+                      </a>
                     </div>
                   </div>
                   <div class="post__item-info">
@@ -383,12 +383,12 @@ export default function getInitialAllTabsData() {
                     </div>
                   </div>
                   <div class="post__item-view hidden-tablet">
-                    <button
+                    <a
                       class="post__item-button button icon icon--arrow-top-right-yellow"
-                      type="button"
+                      href="./blogs.html"
                     >
                       View Blog
-                    </button>
+                    </a>
                   </div>
                 </div>
               </article>

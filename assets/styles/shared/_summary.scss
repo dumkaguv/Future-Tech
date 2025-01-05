@@ -1,0 +1,27 @@
+@use "../helpers" as *;
+
+.summary {
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(rem(160), rem(210)));
+    row-gap: fluid(20, 40);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(4, 10);
+
+    &--wide {
+      grid-column: span 2;
+    }
+  }
+
+  &__key {
+    color: var(--color-gray-60);
+  }
+
+  &__value {
+    color: var(--color-light);
+  }
+}

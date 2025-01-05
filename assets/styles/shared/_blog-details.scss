@@ -1,0 +1,126 @@
+@use "../helpers" as *;
+
+.blog-details {
+  &__header {
+    display: flex;
+    align-items: end;
+    min-height: fluid(281, 598);
+    padding-bottom: fluid(17, 65);
+    border-bottom: var(--border);
+  
+    background: linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 0) 0%,
+        rgba(20, 20, 20, 0.88) 75.52%,
+        #141414 100%
+      ),
+      url("../../../images/blogs/bg.jpg") lightgray 50% / cover no-repeat;  
+  }
+
+  &__title {
+    text-align: center;
+    font-size: fluid(28, 64);
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr fluid(250, 520);
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__introduction,
+  &__main,
+  &__summary {
+    padding-block: fluid(40, 80);
+  }
+
+  &__introduction,
+  &__main {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet-above {
+      padding-right: fluid(40, 80);
+      border-right: var(--border);
+    }
+  }
+
+  &__actions,
+  &__summary {
+    @include tablet-above {
+      padding-left: fluid(40, 80);
+    }
+  }
+
+  &__introduction,
+  &__actions {
+    @include tablet-above {
+      border-bottom: var(--border);
+    }
+  }
+
+  &__introduction {
+    row-gap: fluid(6, 14);
+  }
+
+  &__actions,
+  &__introduction,
+  &__summary {
+    @include tablet {
+      @include full-vw-centered-line(bottom);
+    }
+  }
+
+  &__main {
+    --initialMaxHeight: #{rem(741)};
+
+    @include laptop {
+      --initialMaxHeight: #{rem(692)};
+    }
+
+    @include tablet {
+      --initialMaxHeight: #{rem(650)};
+    }
+
+    @include mobile {
+      --initialMaxHeight: #{rem(630)};
+    }
+
+    row-gap: fluid(14, 24);
+    height: fit-content;
+    padding-bottom: 0;
+  }
+
+  &__actions {
+    padding-block: fluid(20, 50);
+    height: fit-content;
+
+    @include tablet {
+      order: -1;
+    }
+
+    @include mobile-s {
+      align-self: center;
+    }
+  }
+
+  &__summary { 
+    @include tablet-above {
+      position: relative;
+      top: rem(-130);
+      padding-bottom: 0;
+    }
+
+    @include tablet {
+      order: -1;
+    }
+  }
+
+  &__read-full-button {
+    width: fit-content;
+  }
+}
