@@ -840,6 +840,9 @@ button[aria-label]::before {
   }
 }
 
+.card {
+  width: 100%;
+}
 .card-row {
   display: flex;
   flex-direction: row;
@@ -1251,6 +1254,8 @@ button[aria-label]::before {
 }
 .content-block__title {
   font-size: clamp(1.25rem, 0.9903846154rem + 1.1538461538dvw, 2.375rem);
+}
+.content-block__title:not(:last-child) {
   margin-bottom: clamp(0.375rem, 0.2307692308rem + 0.641025641dvw, 1rem);
 }
 .content-block__info {

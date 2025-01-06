@@ -1,0 +1,94 @@
+@use "../helpers" as *;
+
+.accordion {
+  display: grid;
+  row-gap: fluid(20, 30);
+
+  &__item {
+    display: grid;
+    padding: rem(34);
+    border-radius: fluid(8, 12);
+    border: var(--border);
+    background-color: var(--color-dark-10);
+    padding-right: fluid(60, 80);
+
+    overflow: hidden;
+
+    cursor: pointer;
+    transition: border-color var(--transition-duration);
+
+    @include hover {
+      border-color: var(--color-accent);
+    }
+
+    &.is-expanded {
+      .accordion__body {
+        --padding-top-body-content: #{rem(20)};
+
+        padding-top: var(--padding-top-body-content);
+        overflow: visible;
+      }
+
+      .accordion__title {
+        padding-bottom: fluid(16, 24);
+        border-bottom: var(--border);
+        transition: padding 0.6s ease-out;
+
+        &::after,
+        &::before {
+          background-color: var(--color-light);
+          top: 33%;
+        }
+
+        &::before {
+          rotate: -180deg;
+        }
+      }
+    }
+
+    @include laptop {
+      padding: rem(24);
+      padding-right: fluid(50, 60);
+    }
+  }
+
+  &__title {
+    border: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    padding-right: rem(20);
+
+    position: relative;
+    color: var(--color-light);
+    font-size: fluid(16, 20);
+    transition: padding var(--transition-duration);
+
+    &::after,
+    &::before {
+      width: rem(16);
+      height: rem(2);
+
+      position: absolute;
+      content: "";
+      top: 50%;
+      right: rem(-50);
+      background-color: var(--color-accent);
+      transition-duration: var(--transition-duration);
+
+      @include laptop {
+        right: rem(-35);
+      }
+    }
+
+    &::before {
+      rotate: 90deg;
+    }
+  }
+
+  &__body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-out, padding-top 0.6s ease-out;
+  }
+}

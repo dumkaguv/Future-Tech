@@ -69,7 +69,10 @@
 
   &__title {
     font-size: fluid(20, 38);
-    margin-bottom: fluid(6, 16);
+    
+    &:not(:last-child) {
+      margin-bottom: fluid(6, 16);
+    }
   }
 
   &__info {

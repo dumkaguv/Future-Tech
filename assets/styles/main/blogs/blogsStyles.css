@@ -760,6 +760,11 @@ button[aria-label]::before {
   color: var(--color-light);
   background-color: var(--color-dark-10);
 }
+@media (width <= 63.99875rem) {
+  .tabs__list-item {
+    max-width: unset;
+  }
+}
 .tabs__list-title {
   font-size: clamp(0.875rem, 0.8173076923rem + 0.2564102564dvw, 1.125rem);
   font-weight: 400;
@@ -808,6 +813,7 @@ button[aria-label]::before {
 }
 .post__item-view {
   align-self: center;
+  margin-left: auto;
 }
 .post__info-date {
   margin-bottom: clamp(1.125rem, 0.9519230769rem + 0.7692307692dvw, 1.875rem);

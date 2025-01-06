@@ -54,6 +54,10 @@
         color: var(--color-light);
         background-color: var(--color-dark-10);
       }
+
+      @include tablet {
+        max-width: unset;
+      }
     }
 
     &-title {
