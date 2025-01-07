@@ -1,4 +1,4 @@
-# Future Tech website
+# Future Tech website 🌐
 
 ![Design preview for the Future Tech website](./preview.jpg)
 
@@ -9,6 +9,8 @@ This project was implemented according to the model [Future Tech](https://www.fi
 Challenge is to build out this multi-page Future Tech website and get it looking as close to the design as possible.
 
 The layout was created using native JS, SCSS, BEM, IMask lib, WebPack.
+
+Link to see the result: [Future Tech](https://dumkaguv.github.io/future-tech/)
 
 ## Getting Started 🚀
 
