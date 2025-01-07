@@ -10,7 +10,7 @@ Challenge is to build out this multi-page Future Tech website and get it looking
 
 The layout was created using native JS, SCSS, BEM, IMask lib, WebPack.
 
-Link to see the result: [Future Tech](https://dumkaguv.github.io/future-tech/)
+Link to see the result: [Future Tech](https://dumkaguv.github.io/Future-Tech/)
 
 ## Getting Started 🚀
 
