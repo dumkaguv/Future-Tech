@@ -4,7 +4,7 @@
 
 ## Welcome! 👋
 
-This project was implemented according to the model [Future Tech](https://www.figma.com/design/YzTDRV7OaSoeCUBNYaoCZV)
+This project was implemented according to the model [Figma](https://www.figma.com/design/YzTDRV7OaSoeCUBNYaoCZV)
 
 Challenge is to build out this multi-page Future Tech website and get it looking as close to the design as possible.
 
