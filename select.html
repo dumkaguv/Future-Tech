@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <title>Future Tech | Contact 💬</title>
+
+    <link
+      rel="stylesheet"
+      href="./assets/styles/main/contact/contactStyles.css"
+    />
+    <link rel="icon" href="./assets/icons/favicon.png" type="image/png" />
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/imask/7.6.1/imask.min.js"
+      defer
+    ></script>
+
+    <script
+      src="./assets/scripts/pages/contactScript.js"
+      type="module"
+    ></script>
+  </head>
+  <!-- home - 🏠 news - 📰 blog - ✍️ podcast - 📣 resources - 🌐 contact - 💬-->
+  <body>
+    <header class="header" data-js-header>
+      <div class="header__wrapper">
+        <!-- Header -->
+        <div class="header__body container">
+          <a class="header__logo" href="./" tabindex="0">
+            <img
+              class="header__logo-icon"
+              width="180"
+              height="50"
+              src="./assets/icons/logo-future-tech.svg"
+              alt=""
+              aria-label="Future Tech Logo"
+            />
+          </a>
+          <div class="header__overlay" data-js-header-overlay>
+            <!-- Header Menu -->
+            <nav class="header__menu">
+              <ul class="header__menu-list">
+                <li class="header__menu-item">
+                  <a
+                    class="header__menu-link"
+                    href="./index.html"
+                    tabindex="0"
+                  >
+                    Home
+                  </a>
+                </li>
+                <li class="header__menu-item">
+                  <a
+                    class="header__menu-link"
+                    href="./news.html"
+                    tabindex="0"
+                  >
+                    News
+                  </a>
+                </li>
+                <li class="header__menu-item">
+                  <a
+                    class="header__menu-link"
+                    href="./podcasts.html"
+                    tabindex="0"
+                  >
+                    Podcasts
+                  </a>
+                </li>
+                <li class="header__menu-item">
+                  <a
+                    class="header__menu-link"
+                    href="./resources.html"
+                    tabindex="0"
+                  >
+                    Resources
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <a
+              class="header__menu-contact button button--accent"
+              aria-label="Contact Us"
+              tabindex="0"
+              href="./contact.html"
+            >
+              Contact Us
+            </a>
+          </div>
+          <button
+            type="button"
+            class="header__burger-button visible-mobile"
+            aria-label="Open Menu"
+            data-js-header-burger-button
+          >
+            <span class="header__burger-button-line"></span>
+            <span class="header__burger-button-line"></span>
+            <span class="header__burger-button-line"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <div class="container" style="max-width: 450px; width: 100%;">
+      <div class="select field" data-js-select>
+        <label
+          class="select__label"
+          id="phoneNumberPrefixSelectLabel"
+          for="phoneNumberPrefix"
+          >Phone Number Prefix</label
+        >
+        <select
+          class="select__original-control field__control"
+          id="phoneNumberPrefix"
+          tabindex="-1"
+          data-js-select-original-control
+        >
+          <option value="+7" selected>+7</option>
+          <option value="+1">+1</option>
+          <option value="+2">+2</option>
+          <option value="+3">+3</option>
+        </select>
+        <div class="select__body">
+          <div
+            class="select__button field__control"
+            tabindex="0"
+            role="combobox"
+            aria-expanded="false"
+            aria-haspopup="listbox"
+            aria-controls="phoneNumberPrefixSelectDropdown"
+            aria-labelledby="phoneNumberPrefixSelectLabel"
+            data-js-select-button
+          >
+            +7
+          </div>
+          <div
+            class="select__dropdown"
+            role="listbox"
+            id="phoneNumberPrefixSelectDropdown"
+            aria-labelledby="phoneNumberPrefixSelectLabel"
+            data-js-select-dropdown
+          >
+            <div
+              class="select__option is-selected is-current"
+              id="phoneNumberPrefixSelectOption-1"
+              role="option"
+              aria-selected="true"
+              data-js-select-option
+            >
+              +7
+            </div>
+            <div
+              class="select__option"
+              id="phoneNumberPrefixSelectOption-2"
+              role="option"
+              aria-selected="false"
+              data-js-select-option
+            >
+              +1
+            </div>
+            <div
+              class="select__option"
+              id="phoneNumberPrefixSelectOption-3"
+              role="option"
+              aria-selected="false"
+              data-js-select-option
+            >
+              +2
+            </div>
+            <div
+              class="select__option"
+              id="phoneNumberPrefixSelectOption-4"
+              role="option"
+              aria-selected="false"
+              data-js-select-option
+            >
+              +3
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

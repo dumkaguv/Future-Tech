@@ -1531,6 +1531,7 @@ button[aria-label]::before {
   .metrics.metrics--4-columns .metrics__list-item:nth-child(even) {
     border-right: none;
     padding-left: 0.5rem;
+    padding-right: 0.3125rem;
   }
   .metrics.metrics--4-columns .metrics__list-item:nth-child(odd) {
     right: var(--container-padding-x);

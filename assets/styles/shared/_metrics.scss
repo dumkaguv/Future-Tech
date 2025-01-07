@@ -26,6 +26,7 @@
           &:nth-child(even) {
             border-right: none;
             padding-left: rem(8);
+            padding-right: rem(5);
           }
 
           &:nth-child(odd) {

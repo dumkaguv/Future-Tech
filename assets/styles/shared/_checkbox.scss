@@ -23,6 +23,7 @@
     @include square(var(--size));
 
     display: flex;
+    min-width: var(--size);
     align-items: center;
     justify-content: center;
     border-radius: rem(4);
@@ -36,6 +37,7 @@
 
     &:checked::after {
       content: "✔";
+      animation: appear var(--transition-duration) ease-in-out;
     }
 
     @include laptop {
@@ -45,5 +47,14 @@
 
   &__label {
     font-weight: 400;
+  }
+
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 }

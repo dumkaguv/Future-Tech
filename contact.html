@@ -17,6 +17,11 @@
     <link rel="icon" href="./assets/icons/favicon.png" type="image/png" />
 
     <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/imask/7.6.1/imask.min.js"
+      defer
+    ></script>
+
+    <script
       src="./assets/scripts/pages/contactScript.js"
       type="module"
     ></script>
@@ -309,15 +314,94 @@
                     />
                   </div>
                   <div class="feedback-form__cell field">
-                    <label for="phoneNumber" class="field__label"
+                    <label
+                      for="phoneNumber"
+                      class="field__label"
                       >Phone Number</label
                     >
                     <div class="field__body">
-                      <div class="select">SELECT</div>
+                      <div class="select field" data-js-select>
+                        <label
+                          class="select__label visually-hidden"
+                          id="phoneNumberPrefixSelectLabel"
+                          for="phoneNumberPrefix"
+                          >Phone Number Prefix</label
+                        >
+                        <select
+                          class="select__original-control field__control"
+                          id="phoneNumberPrefix"
+                          tabindex="-1"
+                          data-js-select-original-control
+                        >
+                          <option value="+7" selected>+7</option>
+                          <option value="+1">+1</option>
+                          <option value="+2">+2</option>
+                          <option value="+3">+3</option>
+                        </select>
+                        <div class="select__body">
+                          <div
+                            class="select__button field__control"
+                            tabindex="0"
+                            role="combobox"
+                            aria-expanded="false"
+                            aria-haspopup="listbox"
+                            aria-controls="phoneNumberPrefixSelectDropdown"
+                            aria-labelledby="phoneNumberPrefixSelectLabel"
+                            data-js-select-button
+                          >
+                            +7
+                          </div>
+                          <div
+                            class="select__dropdown"
+                            role="listbox"
+                            id="phoneNumberPrefixSelectDropdown"
+                            aria-labelledby="phoneNumberPrefixSelectLabel"
+                            data-js-select-dropdown
+                          >
+                            <div
+                              class="select__option is-selected is-current"
+                              id="phoneNumberPrefixSelectOption-1"
+                              role="option"
+                              aria-selected="true"
+                              data-js-select-option
+                            >
+                              +7
+                            </div>
+                            <div
+                              class="select__option"
+                              id="phoneNumberPrefixSelectOption-2"
+                              role="option"
+                              aria-selected="false"
+                              data-js-select-option
+                            >
+                              +1
+                            </div>
+                            <div
+                              class="select__option"
+                              id="phoneNumberPrefixSelectOption-3"
+                              role="option"
+                              aria-selected="false"
+                              data-js-select-option
+                            >
+                              +2
+                            </div>
+                            <div
+                              class="select__option"
+                              id="phoneNumberPrefixSelectOption-4"
+                              role="option"
+                              aria-selected="false"
+                              data-js-select-option
+                            >
+                              +3
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                       <input
                         class="field__control"
                         id="phoneNumber"
                         placeholder="(999) 999-99-99"
+                        data-js-input-mask="(000) 000-00-00"
                       />
                     </div>
                   </div>
@@ -401,8 +485,12 @@
                     tabindex="0"
                   >
                     <div class="accordion__title">What is AI?</div>
-                    <div class="accordion__body" data-js-accordion-content id="content1">
-                      <p style="padding-bottom: 12px;">
+                    <div
+                      class="accordion__body"
+                      data-js-accordion-content
+                      id="content1"
+                    >
+                      <p style="padding-bottom: 12px">
                         AI stands for Artificial Intelligence, which refers
                         to the simulation of human intelligence in
                         machines. It enables them to perform tasks like
@@ -417,9 +505,15 @@
                     aria-controls="content2"
                     tabindex="0"
                   >
-                    <div class="accordion__title">How can I listen to your podcasts?</div>
-                    <div class="accordion__body" data-js-accordion-content id="content2">
-                      <p style="padding-bottom: 12px;">
+                    <div class="accordion__title">
+                      How can I listen to your podcasts?
+                    </div>
+                    <div
+                      class="accordion__body"
+                      data-js-accordion-content
+                      id="content2"
+                    >
+                      <p style="padding-bottom: 12px">
                         AI stands for Artificial Intelligence, which refers
                         to the simulation of human intelligence in
                         machines. It enables them to perform tasks like
@@ -434,9 +528,15 @@
                     aria-controls="content3"
                     tabindex="0"
                   >
-                    <div class="accordion__title">Are your podcasts free to listen to?</div>
-                    <div class="accordion__body" data-js-accordion-content id="content3">
-                      <p style="padding-bottom: 12px;">
+                    <div class="accordion__title">
+                      Are your podcasts free to listen to?
+                    </div>
+                    <div
+                      class="accordion__body"
+                      data-js-accordion-content
+                      id="content3"
+                    >
+                      <p style="padding-bottom: 12px">
                         AI stands for Artificial Intelligence, which refers
                         to the simulation of human intelligence in
                         machines. It enables them to perform tasks like
@@ -451,16 +551,22 @@
                     aria-controls="content4"
                     tabindex="0"
                   >
-                    <div class="accordion__title">Can I download episodes to listen offline?</div>
-                    <div class="accordion__body" data-js-accordion-content id="content4">
-                      <p style="padding-bottom: 12px;">
+                    <div class="accordion__title">
+                      Can I download episodes to listen offline?
+                    </div>
+                    <div
+                      class="accordion__body"
+                      data-js-accordion-content
+                      id="content4"
+                    >
+                      <p style="padding-bottom: 12px">
                         AI stands for Artificial Intelligence, which refers
                         to the simulation of human intelligence in
                         machines. It enables them to perform tasks like
-                        problem-solving, learning, and decision-making.
-                        AI stands for Artificial Intelligence, which refers
-                        to the simulation of human intelligence in
-                        machines. It enables them to perform tasks like
+                        problem-solving, learning, and decision-making. AI
+                        stands for Artificial Intelligence, which refers to
+                        the simulation of human intelligence in machines.
+                        It enables them to perform tasks like
                         problem-solving, learning, and decision-making.
                       </p>
                     </div>
@@ -472,9 +578,15 @@
                     aria-controls="content5"
                     tabindex="0"
                   >
-                    <div class="accordion__title">How often do you release new episodes?</div>
-                    <div class="accordion__body" data-js-accordion-content id="content5">
-                      <p style="padding-bottom: 12px;">
+                    <div class="accordion__title">
+                      How often do you release new episodes?
+                    </div>
+                    <div
+                      class="accordion__body"
+                      data-js-accordion-content
+                      id="content5"
+                    >
+                      <p style="padding-bottom: 12px">
                         AI stands for Artificial Intelligence, which refers
                         to the simulation of human intelligence in
                         machines. It enables them to perform tasks like
