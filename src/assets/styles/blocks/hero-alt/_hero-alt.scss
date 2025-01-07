@@ -1,0 +1,43 @@
+@use "../../helpers" as *;
+
+.hero-alt {
+  padding-block: fluid(40, 140);
+  border-bottom: var(--border);
+  
+  &__title {
+    display: flex;
+    flex-direction: column;
+    font-size: fluid(28, 80);
+    font-family: var(--font-family-accent);
+    font-weight: 500;
+    color: var(--color-light);
+    row-gap: fluid(8, 20);
+
+    @include tablet {
+      row-gap: 0;
+    }
+  }
+
+  &__subtitle {
+    display: flex;
+    align-items: center;
+    column-gap: fluid(50, 80);
+
+    &-text {
+      white-space: nowrap;
+    }
+
+    @include tablet {
+      align-items: flex-start;
+      flex-direction: column;
+      row-gap: rem(15);
+    }
+  }
+
+  &__description {
+    display: inline;
+    height: fit-content;
+    font-size: fluid(14, 18);
+    color: var(--color-gray-60);
+  }
+}

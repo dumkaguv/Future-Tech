@@ -1,0 +1,41 @@
+@use "../helpers" as *;
+
+.feedback-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: rem(50);
+  color: var(--color-light);
+
+  @include laptop {
+    row-gap: rem(30);
+  }
+
+  @include tablet {
+    grid-template-columns: 1fr;
+  }
+
+  @include mobile {
+    row-gap: rem(20);
+  }
+
+  &__cell {
+    &--wide {
+      grid-column: -1 / 1;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    column-gap: rem(20);
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__submit-button {
+    min-width: rem(137);
+
+    @include mobile {
+      min-width: rem(103);
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@use "../helpers" as *;
+
+.card-m {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-dark-10);
+
+  padding: fluid(20, 30);
+  border-radius: fluid(10, 12);
+  border: var(--border);
+  column-gap: rem(8);
+
+  @include mobile-above {
+    column-gap: rem(10);
+    max-width: rem(500);
+    width: 100%;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(4);
+  }
+
+  &-key {
+    font-size: fluid(14, 18);
+    color: var(--color-gray-60);
+  }
+
+  &-value {
+    font-size: fluid(14, 18);
+    color: var(--color-light);
+  }
+}

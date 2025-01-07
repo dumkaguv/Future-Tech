@@ -1,0 +1,14 @@
+@use "../helpers" as *;
+
+.button--accent {
+  background-color: var(--color-accent);
+  transition-duration: var(--transition-duration);
+  color: var(--color-dark);
+  border: 0;
+  border-radius: rem(8);
+  
+  @include hover {
+    color: var(--color-dark);
+    background-color: #ffde5b;
+  }
+}

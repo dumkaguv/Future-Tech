@@ -1,0 +1,122 @@
+@use "../helpers" as *;
+
+.metrics {
+  &.metrics--4-columns {
+    border-bottom: none;
+
+    .metrics__list {
+      @include tablet {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 0;
+      }
+      
+      &-item {
+        align-items: center;
+        justify-content: center;
+        max-width: rem(360);
+
+        @include tablet {
+          border-bottom: var(--border);
+          max-width: unset;
+          position: relative;
+          padding-inline: 0;
+          width: calc(100% + var(--container-padding-x));
+
+          &:nth-child(even) {
+            border-right: none;
+            padding-left: rem(8);
+            padding-right: rem(5);
+          }
+
+          &:nth-child(odd) {
+            right: var(--container-padding-x);
+          }
+        }
+      }
+    }
+    .metrics__type {
+      text-align: center;
+    }
+  }
+
+  @include tablet-above {
+    &:not(:last-child) {
+      border-right: var(--border);
+    }
+    
+    border-bottom: var(--border);
+  }
+
+  @include tablet {
+    border-bottom: var(--border);
+
+    &::after {
+      width: 100dvw;
+      left: calc(var(--container-padding-x) * -1);
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: rem(50);
+
+    @include laptop {
+      column-gap: rem(40);
+    }
+
+    @include mobile {
+      column-gap: rem(20);
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      max-width: rem(250);
+      width: 100%;
+      row-gap: rem(10);
+      padding-block: rem(50);
+
+      &:not(:last-child) {
+        border-right: var(--border);
+        padding-right: rem(50);
+
+        @include laptop {
+          padding-right: rem(40);
+        }
+
+        @include mobile {
+          padding-right: rem(20);
+        }
+      }
+
+      @include laptop {
+        padding-block: rem(30);
+      }
+
+      @include mobile {
+        padding-block: rem(20);
+      }
+    }
+  }
+
+  &__value {
+    font-size: rem(40);
+    font-weight: 600;
+    color: var(--color-light);
+
+    @include laptop {
+      font-size: rem(30);
+    }
+
+    @include mobile {
+      font-size: rem(24);
+    }
+  }
+
+  &__type {
+    @include laptop {
+      font-size: rem(14);
+    }
+  }
+}

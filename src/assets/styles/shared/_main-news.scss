@@ -1,0 +1,73 @@
+@use "../helpers" as *;
+
+.main-news {
+  padding-block:  fluid(40, 80);
+
+  &__inner {
+    display: flex;
+    column-gap: rem(80);
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: rem(30);
+    }
+  }
+
+  &__image {
+    display: flex;
+    flex-shrink: 0;
+    border-radius: rem(12);
+    width: fluid(358, 515);
+    height: fluid(213, 427);
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(20, 50);
+  }
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(6, 30);
+  }
+
+  &__title {
+    font-size: fluid(20, 32);
+    font-family: var(--font-family-base);
+  }
+
+  &__description {
+    font-size: fluid(16, 20);
+    color: var(--color-gray-60);
+  }
+
+  &__additional-info {
+    display: flex;
+    column-gap: fluid(20, 50);
+  }
+
+  &__card-info {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(2, 4);
+
+    &-key {
+      font-size: fluid(14, 18);
+      color: var(--color-gray-60);
+    }
+
+    &-value {
+      font-size: fluid(14, 18);
+      color: var(--color-light);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    column-gap: rem(20);
+    align-items: center;
+  }
+}

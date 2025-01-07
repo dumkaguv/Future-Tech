@@ -1,0 +1,267 @@
+@use "../../helpers" as *;
+
+.hero {
+  &__body {
+    display: grid;
+    grid-template-columns: 60% auto;
+    grid-template-areas:
+      "title resources"
+      "statistics resources";
+
+    @include tablet {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "title"
+        "statistics"
+        "resources";
+    }
+  }
+
+  &__introduction {
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+
+    padding-top: rem(150);
+    padding-bottom: rem(100);
+    padding-right: rem(50);
+
+    border-bottom: var(--border);
+
+    @include tablet-above {
+      border-right: var(--border);
+    }
+
+    @include laptop {
+      padding-block: rem(100);
+      padding-right: rem(40);
+    }
+
+    @include tablet {
+      padding-block: rem(40);
+      padding-right: 0;
+
+      &::after {
+        width: 100dvw;
+        right: calc(var(--container-padding-x) * -1);
+      }
+    }
+
+    @include mobile {
+      padding-top: rem(40);
+      padding-bottom: rem(30);
+      padding-right: 0;
+    }
+  }
+
+  &__subtitle {
+    font-size: rem(30);
+    font-weight: 500;
+    font-family: var(--font-family-accent);
+    color: var(--color-dark-40);
+    margin-bottom: fluid(10, 30);
+
+    @include laptop {
+      font-size: rem(22);
+    }
+
+    @include mobile {
+      font-size: rem(18);
+    }
+  }
+
+  &__title {
+    margin-bottom: fluid(14, 20);
+  }
+
+  &__description {
+    font-size: rem(18);
+    color: var(--color-gray-50);
+
+    @include laptop {
+      font-size: rem(16);
+    }
+
+    @include mobile {
+      font-size: rem(14);
+    }
+  }
+
+  &__statistics {
+    grid-area: statistics;
+  }
+
+  &__resources {
+    grid-area: resources;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: end;
+
+    padding-left: fluid(50, 80);
+    padding-bottom: fluid(50, 80);
+    padding-top: rem(150);
+
+    background-image: url("../../../images/heroBg.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 0 0;
+
+    border-bottom: var(--border);
+
+    @include laptop {
+      padding-left: rem(50);
+      padding-bottom: rem(50);
+    }
+
+    @include tablet {
+      --offsetX: var(--container-padding-x);
+      
+      background-size: auto;
+      margin-left: calc(var(--offsetX) * -1);
+      max-width: unset;
+      width: calc(100% + 2 * var(--offsetX));
+
+      &::after {
+        width: 100dvw;
+        left: calc(var(--container-padding-x) * -1);
+      }
+    }
+
+    @include mobile {
+      padding-top: rem(100);
+      padding-left: rem(24);
+      padding-bottom: rem(40);
+    }
+
+    &-button {
+      @include mobile-s {
+        width: 90%;
+      }
+    }
+
+    &-team {
+      margin-bottom: fluid(20, 30);
+    }
+
+    &-title {
+      font-size: rem(24);
+      color: var(--color-light);
+      margin-bottom: fluid(6, 14);
+
+      @include laptop {
+        font-size: rem(20);
+      }
+    }
+
+    &-info {
+      margin-bottom: fluid(20, 30);
+    }
+  }
+
+  &__advantages {
+    border-bottom: var(--border);
+
+    &-list {
+      display: flex;
+      column-gap: rem(80);
+
+      @include laptop {
+        column-gap: rem(50);
+      }
+
+      @include tablet {
+        flex-direction: column;
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(20);
+      padding-block: rem(50);
+      width: 100%;
+
+      &:not(:last-child) {
+        @include laptop-above {
+          padding-right: rem(80);
+        }
+
+        @include tablet-above {
+          border-right: var(--border);
+          padding-right: rem(50);
+        }
+      }
+
+      @include laptop {
+        padding-block: rem(40);
+        
+      }
+
+      @include tablet {
+        &:not(:last-child) {
+          border-bottom: var(--border);
+        }
+      }
+
+      @include mobile {
+        padding-block: rem(30);
+      }
+    }
+
+    &-link {
+      display: inline-flex;
+      position: relative;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+
+      @include hover {
+        scale: 1.05;
+      }
+    }
+
+    &-icon {
+      @include laptop {
+        @include square(rem(40));
+      }
+
+      @include mobile-s {
+        @include square(rem(30));
+      }
+    }
+
+    &-arrow {
+      @include square(rem(44));
+
+      @include laptop {
+        @include square(rem(40));
+      }
+    }
+
+    &-title {
+      @include mobile {
+        font-size: rem(16);
+      }
+    }
+
+    &-type {
+      font-size: rem(16);
+      color: var(--color-gray-50);
+
+      @include mobile {
+        font-size: rem(14);
+      }
+    }
+
+    &-statistic {
+      font-size: rem(16);
+      font-family: var(--font-family-accent);
+      color: var(--color-gray-60);
+
+      @include mobile {
+        font-size: rem(14);
+      }
+    }
+  }
+}

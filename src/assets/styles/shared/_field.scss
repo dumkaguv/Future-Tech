@@ -1,0 +1,64 @@
+@use "../helpers" as *;
+
+.field {
+  display: grid;
+  row-gap: rem(16);
+
+  @include laptop {
+    row-gap: rem(12);
+  }
+
+  &__label {
+    font-size: rem(18);
+    font-weight: 500;
+
+    @include laptop {
+      font-size: rem(16);
+    }
+  }
+
+  &__control {
+    max-height: rem(67);
+    width: 100%;
+    padding: rem(20);
+    border-radius: rem(8);
+    border: var(--border);
+    background-color: var(--color-dark-10);
+    color: var(--color-light);
+
+    &::placeholder {
+      @include laptop {
+        font-size: rem(14);
+      }
+    }
+
+    @include hover {
+      box-shadow: 0 0 0 #{rem(4)} #191919;
+      border-color: var(--color-accent);
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    column-gap: rem(16);
+
+    @include laptop {
+      column-gap: rem(12);
+    }
+  }
+
+  textarea.field__control {
+    resize: none;
+    overflow-y: auto;
+    min-height: rem(163);
+
+    @include mobile {
+      min-height: rem(127);
+    }
+  }
+
+  &__required-star {
+    color: var(--color-red);
+  }
+}

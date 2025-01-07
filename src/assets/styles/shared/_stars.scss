@@ -1,0 +1,33 @@
+@use "../helpers" as *;
+
+.stars {
+  position: absolute;
+
+  display: flex;
+  flex-direction: row;
+  column-gap: fluid(4, 7);
+  padding: fluid(8, 10) fluid(12, 16);
+
+  border-radius: rem(100);
+  border: var(--border);
+  background-color: var(--color-dark);
+
+  top: rem(-22);
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 1;
+
+  @include laptop {
+    padding: rem(8) rem(10);
+    column-gap: rem(3);
+    top: rem(-18);
+  }
+
+  &__icon {
+    @include laptop {
+      width: rem(20);
+      height: rem(20);
+    }
+  }
+}

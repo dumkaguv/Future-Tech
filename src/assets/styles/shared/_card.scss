@@ -1,0 +1,62 @@
+@use "../helpers" as *;
+
+.card {
+  width: 100%;
+  
+  &-row {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+  }
+
+  @include tablet-above {
+    padding: rem(60) 0 rem(60) rem(60);
+  }
+
+  @include desktop-above {
+    padding: rem(80) 0 rem(80) rem(80);
+  }
+
+  @include tablet {
+    padding-block: rem(30);
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-dark-10);
+
+    padding: rem(40);
+    border-radius: rem(12);
+    border: var(--border);
+
+    @include laptop {
+      padding: rem(30);
+    }
+
+    @include mobile {
+      border-radius: rem(10);
+      padding: rem(24);
+    }
+
+    &-header {
+      @include laptop {
+        font-size: rem(20);
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(20);
+
+      @include laptop {
+        row-gap: rem(16);
+      }
+    }
+
+    &-description {
+      color: var(--color-gray-60);
+    }
+  }
+}

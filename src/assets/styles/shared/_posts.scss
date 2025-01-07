@@ -1,0 +1,107 @@
+@use "../helpers" as *;
+
+.post {
+  &__item {
+    &--wrapper {
+      display: flex;
+      column-gap: fluid(20, 50);
+      padding-block: fluid(40, 80);
+      color: var(--color-gray-60);
+
+      @include tablet {
+        flex-direction: column;
+      }
+    }
+
+    &:not(:last-child) {
+      border-bottom: var(--border);
+    }
+
+    &-person {
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      height: fit-content;
+      column-gap: fluid(8, 16);
+      max-width: fluid(200, 385);
+      width: 100%;
+
+      @include tablet {
+        max-width: unset;
+        margin-bottom: rem(30);
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      max-width: rem(950);
+      width: 100%;
+    }
+
+    &-view {
+      align-self: center;
+      margin-left: auto;
+    }
+  }
+
+  &__info {
+    &-date {
+      margin-bottom: fluid(18, 30);
+    }
+
+    &-description {
+      margin-bottom: fluid(18, 30);
+    }
+  }
+
+  &__actions {
+    &-list {
+      display: flex;
+      column-gap: rem(10);
+    }
+
+    &-button {
+      display: flex;
+      column-gap: rem(4);
+      border-radius: rem(100);
+      background-color: var(--color-dark-10);
+      padding: rem(8) rem(16);
+
+      @include laptop {
+        padding: rem(6) rem(12);
+      }
+    }
+
+    &-icon {
+      &.is-active {
+        path {
+          fill: var(--color-red);
+          stroke: none;
+        }
+      }
+    }
+  }
+
+  &__image {
+    display: inline-flex;
+    flex-shrink: 0;
+    height: rem(80);
+    width: rem(80);
+    border-radius: rem(42);
+    background-color: var(--color-dark-15);
+
+    @include laptop {
+      height: rem(60);
+      width: rem(60);
+    }
+  }
+
+  &__person {
+    &-info {
+      @include tablet {
+        margin-right: rem(20);
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@use "../helpers" as *;
+
+.tabs {
+  width: 100%;
+
+  &:not(.tabs--compact) {
+    padding-block: fluid(20, 50);
+    border-bottom: var(--border);
+  }
+
+  &--compact {
+    .tabs__inner {
+      padding: 0;
+    }
+
+    .tabs__list {
+      padding: rem(10);
+      column-gap: rem(10);
+      background-color: var(--color-dark);
+      border: var(--border);
+      border-radius: rem(10);
+
+      &-item {
+        padding: fluid(14, 18) fluid(20, 38);
+        border-radius: rem(8);
+
+        &.is-active {
+          background-color: var(--color-dark-15);
+        }
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    column-gap: rem(20);
+    overflow-x: auto;
+
+    &::-webkit-scrollbar {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &-item {
+      max-width: rem(250);
+      width: 100%;
+      padding: fluid(18, 30) fluid(16, 24);
+      transition-duration: var(--transition-duration);
+      cursor: pointer;
+
+      &.is-active {
+        font-weight: 500;
+        color: var(--color-light);
+        background-color: var(--color-dark-10);
+      }
+
+      @include tablet {
+        max-width: unset;
+      }
+    }
+
+    &-title {
+      font-size: fluid(14, 18);
+      font-weight: 400;
+
+      &:not(.is-active) {
+        color: var(--color-gray-60);
+      }
+    }
+  }
+}

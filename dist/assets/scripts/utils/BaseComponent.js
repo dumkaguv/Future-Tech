@@ -1,0 +1,1 @@
+class BaseComponent{constructor(){if(this.constructor===BaseComponent)throw new Error("Can't instantiate abstract class 'BaseComponent'!")}getProxyState(t){return new Proxy(t,{get:(t,e)=>t[e],set:(t,e,o)=>{const n=t[e];return t[e]=o,o!==n&&this.updateUI(),!0}})}updateUI(){throw new Error("Need to be implemented method 'updateUI()'!")}}export default BaseComponent;

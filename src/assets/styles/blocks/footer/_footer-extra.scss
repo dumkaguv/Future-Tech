@@ -1,0 +1,49 @@
+@use "../../helpers" as *;
+
+.footer__extra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: fluid(24, 40);
+
+  @include mobile {
+    flex-direction: column;
+    row-gap: rem(20);
+  }
+
+  &-list {
+    display: flex;
+    column-gap: fluid(8, 11);
+  }
+
+  &-line {
+    margin: 0;
+    border-color: var(--color-dark-15);
+    width: rem(1);
+    height: fluid(18, 23);
+  }
+
+  &-link {
+    color: var(--color-dark-40);
+  }
+}
+
+.footer__soc1als {
+  @include mobile {
+    order: -1;
+  }
+
+  &-list {
+    display: flex;
+    column-gap: fluid(14, 20);
+  }
+
+  &-link {
+    color: var(--color-light);
+  }
+}
+
+
+.footer__copyright {
+  color: var(--color-dark-40);
+}

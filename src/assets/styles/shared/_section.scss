@@ -1,0 +1,98 @@
+@use "../helpers" as *;
+
+.section {
+  border-block: var(--border);
+  scroll-margin-top: var(--header-height);
+
+  &__title {
+    @include tablet {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__header {
+    padding-block: rem(120);
+    background-color: var(--color-dark-10);
+    border-bottom: var(--border);
+
+    @include laptop {
+      font-size: rem(44);
+      padding-block: rem(80);
+    }
+
+    @include mobile {
+      font-size: rem(28);
+      padding-block: rem(50);
+    }
+
+    &-button {
+      @include tablet {
+        max-width: rem(360);
+        width: 100%;
+      }
+    }
+
+    &-logo {
+      margin-right: fluid(10, 55);
+
+      @include laptop {
+        @include square(rem(120));
+      }
+
+      @include mobile {
+        @include square(rem(60));
+        
+        margin-right: 0;
+      }
+
+      &-wrapper {
+        display: flex;
+        align-items: center;
+        column-gap: rem(20);
+      }
+    }
+
+    &-subtitle {
+      font-size: rem(20);
+      font-weight: 500;
+      height: fit-content;
+      color: var(--color-light);
+
+      @include laptop {
+        font-size: rem(16);
+      }
+
+      @include mobile {
+        font-size: rem(14);
+      }
+    }
+
+    &-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      column-gap: rem(25);
+
+      @include tablet {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: rem(10);
+      }
+    }
+
+    &-info {
+      display: inline-flex;
+      flex-direction: column;
+      row-gap: rem(16);
+      width: 100%;
+
+      @include laptop {
+        row-gap: rem(10);
+      }
+    }
+  }
+
+  &__description {
+    font-size: fluid(14, 18);
+  }
+}

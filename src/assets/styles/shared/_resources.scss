@@ -1,0 +1,85 @@
+@use "../helpers" as *;
+
+.resources {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(20, 30);
+  padding: rem(80) 0 rem(80) rem(80);
+
+  @include laptop {
+    padding: rem(60) 0 rem(60) rem(60);
+  }
+
+  @include tablet {
+    padding-block: rem(40);
+    padding-inline: 0;
+  }
+
+  @include mobile {
+    row-gap: rem(16);
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    column-gap: rem(18);
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: rem(10);
+      align-items: start;
+    }
+  }
+
+  &__title {
+    white-space: nowrap;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    column-gap: fluid(14, 20);
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: rem(16);
+    }
+  }
+
+  &__image {
+    border-radius: fluid(10, 12);
+
+    @include mobile {
+      min-height: rem(170);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    column-gap: rem(20);
+    padding: fluid(20, 30);
+    background-color: var(--color-dark-10);
+    border: var(--border);
+    border-radius: fluid(8, 13);
+    align-items: center;
+
+    @include mobile {
+      width: 100%;
+    }
+
+    &-info {
+      column-gap: rem(4);
+    }
+
+    &--grow {
+      flex-grow: 1;
+    }
+
+    &--flex-1 {
+      flex: 1;
+    }
+  }
+}

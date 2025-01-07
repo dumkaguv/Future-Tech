@@ -1,0 +1,1 @@
+import pxToRem from"./pxToRem.js";const headerElement=document.querySelector(".header");function onResize(){document.documentElement.style.setProperty("--header-height",`${pxToRem(headerElement.offsetHeight)}rem`)}function defineHeaderHeightCSSVar(){onResize();new ResizeObserver(onResize).observe(headerElement)}export default defineHeaderHeightCSSVar;

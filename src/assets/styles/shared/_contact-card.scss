@@ -1,0 +1,46 @@
+@use "../helpers" as *;
+
+.contact__header {
+  border-bottom: var(--border);
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: fluid(20, 50);
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(10, 15);
+
+    @include mobile {
+      padding-left: rem(20);
+    }
+  }
+
+  &__link {
+    width: fit-content;
+  }
+
+  &__address {
+    color: var(--color-gray-60);
+  }
+
+  &__soc1als {
+    display: flex;
+    column-gap: fluid(10, 20);
+
+    &-link {
+      padding: fluid(14, 18) fluid(24, 30);
+    }
+
+    &-icon {
+      color: var(--color-light);
+
+      @include hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+}
