@@ -10,7 +10,7 @@ Challenge is to build out this multi-page Future Tech website and get it looking
 
 The layout was created using native JS, SCSS, BEM, IMask lib, WebPack.
 
-## Getting Started ✔
+## Getting Started 🚀
 
 Run the development server:
 1. npm run build
